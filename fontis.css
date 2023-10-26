@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*!
+ * ⛲ fontis.css 
+ *
+ * The Algorithmic CSS Framework
+ *
+ * @author David J. Schwarz / Ringsdorf <mail+oss@davidschwarz.eu>
+ * @license MIT License
+ */
+@layer fontis {
+    @layer reboot.core {
+        :root {
+            -moz-text-size-adjust: none;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        small {
+            font-size: inherit;
+        }
+    }
+
+    @layer typography.core {
+
+        /**
+         *
+         * @param number    --scale-ratio           The scaling ratio for text and sizes.
+         * @param font-size --font-size-base        >=1rem The font size for paragraphs and the like.
+         * @yield em        --SEM                   "scope em" A calculated unit that refers to the base font size of the typography scope. Useful as a value of `--flow-space`.
+         * @yield number    --SCALE-{XS-XXXL}       Scaling steps
+         * @yield em        --SIZE-{XS-XXXL}        Scaling of --SEM
+         * @yield rem       --SIZE-ROOT-{XS-XXXL}   Scaling of rem
+         */
+        [data-typography] {
+
+            /* # scaling */
+
+            --SCALE-XS: calc(var(--SCALE-S) / var(--scale-ratio, 1.2));
+            --SCALE-S: calc(var(--SCALE-M) / var(--scale-ratio, 1.2));
+            --SCALE-M: 1;
+            --SCALE-L: calc(var(--SCALE-M) * var(--scale-ratio, 1.2));
+            --SCALE-XL: calc(var(--SCALE-L) * var(--scale-ratio, 1.2));
+            --SCALE-XXL: calc(var(--SCALE-XL) * var(--scale-ratio, 1.2));
+            --SCALE-XXXL: calc(var(--SCALE-XXL) * var(--scale-ratio, 1.2));
+
+            & > * {
+                --scale-ratio: initial;
+            }
+
+            /* # font sizing */
+
+            font-size: max(var(--font-size-base, 1rem), 1rem);
+            --font-scale: var(--SCALE-M);
+
+            & > * {
+                --font-size-base: initial;
+            }
+
+            & :is(h1, h2, h3, h4, h5, h6, small):not([data-typography]) {
+                font-size: max(calc(1em * var(--font-scale)), .8rem);
+            }
+
+            & small,
+            & h6 {
+                --font-scale: var(--SCALE-S);
+            }
+
+            & h5 {
+                --font-scale: var(--SCALE-M);
+            }
+
+            & h4 {
+                --font-scale: var(--SCALE-L);
+            }
+
+            & h3 {
+                --font-scale: var(--SCALE-XL);
+            }
+
+            & h2 {
+                --font-scale: var(--SCALE-XXL);
+            }
+
+            & h1 {
+                --font-scale: var(--SCALE-XXXL);
+            }
+
+            /* # Scope-dependent sizes */
+
+            &,
+            & * {
+                --SEM: calc(1em / var(--font-scale));
+                --SIZE-XS: calc(var(--SEM) * var(--SCALE-XS));
+                --SIZE-S: calc(var(--SEM) * var(--SCALE-S));
+                --SIZE-M: calc(var(--SEM) * var(--SCALE-M));
+                --SIZE-L: calc(var(--SEM) * var(--SCALE-L));
+                --SIZE-XL: calc(var(--SEM) * var(--SCALE-XL));
+                --SIZE-XXL: calc(var(--SEM) * var(--SCALE-XXL));
+                --SIZE-XXXL: calc(var(--SEM) * var(--SCALE-XXXL));
+            }
+
+            /* # global sizes */
+
+            --SIZE-ROOT-XS: calc(1rem * var(--SCALE-XS));
+            --SIZE-ROOT-S: calc(1rem * var(--SCALE-S));
+            --SIZE-ROOT-M: calc(1rem * var(--SCALE-M));
+            --SIZE-ROOT-L: calc(1rem * var(--SCALE-L));
+            --SIZE-ROOT-XL: calc(1rem * var(--SCALE-XL));
+            --SIZE-ROOT-XXL: calc(1rem * var(--SCALE-XX));
+            --SIZE-ROOT-XXXL: calc(1rem * var(--SCALE-XXL));
+        }
+    }
+
+    @layer layout.core {
+
+        /**
+         *
+         * @param --flow-space
+         */
+        [data-layout|="flow"] > * + * {
+            margin-block-start: var(--flow-space, 1em);
+        }
+    }
+}
