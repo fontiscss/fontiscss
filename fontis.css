@@ -117,8 +117,8 @@
             --SIZE-ROOT-M: calc(1rem * var(--SCALE-M));
             --SIZE-ROOT-L: calc(1rem * var(--SCALE-L));
             --SIZE-ROOT-XL: calc(1rem * var(--SCALE-XL));
-            --SIZE-ROOT-XXL: calc(1rem * var(--SCALE-XX));
-            --SIZE-ROOT-XXXL: calc(1rem * var(--SCALE-XXL));
+            --SIZE-ROOT-XXL: calc(1rem * var(--SCALE-XXL));
+            --SIZE-ROOT-XXXL: calc(1rem * var(--SCALE-XXXL));
         }
     }
 
