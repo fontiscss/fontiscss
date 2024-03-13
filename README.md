@@ -1,78 +1,100 @@
-# ⛲ fontis.css
+# ⛲ fontis.css – The Algorithmic CSS Framework
 
-**The _Algorithmic CSS_ Framework**
+> _fontis.css_ **establishes a new generation** of CSS frameworks!
+
+## What does "Algorithmic CSS Framework" mean?
+
+_fontis.css_ is the first CSS framework of its kind. It  _does not_ offer a concrete design, but provides specialized algorithms that promote a harmonious overall appearance. It also offers the option of storing different configurations for an algorithm. This allows you to create a unique design system in no time at all.
 
 > _fontis_ is not like other CSS frameworks. CSS is a programming language and _fontis.css_ activates its power to help you and your team develop unique design systems faster.  
-<cite>[David J. Schwarz](https://davidschwarz.eu/)</cite>
+<cite>[David J. Schwarz](https://davidschwarz.eu/) – Creator of fontis.css</cite>
 
-## Understand it by example:
+## How it works
 
-Start with _your_ CSS file:
+_fontis.css_ provides three core algorithms – each covering specific aspects of design:
 
-```css
-/* fontis.css has its own layers, so you can just import it. */
-@import url("fontis.css");
+- `typography`
+- `layout`
+- `paint`
 
-/* Adopt the typography algorithm ... */
-[data-typography|="myStyle"] {
+### How to use the design system
 
-    /* ... and adjust the parameters according to your needs. */
-    /* For example, the ratio of the type scale: */
-    --font-scale-ratio: calc(5 / 4);
-}
-
-/* And create as many flavors as you like. */
-[data-typography="myStyle-mainContent"] {
-
-    /* Change the font size of paragraphs from which the other sizes are calculated. */
-    --font-size-base: 1.2rem;
-}
-```
-
-Now go to your HTML file:
+Before you create your first design system with _fontis.css_, take a look at how it will be used afterwards:
 
 ```html
-<!-- Specify the scope in which the respective typography algorithm is to be applied. -->
-<body data-typography=myStyle >
-    <header> ... </header>
-    <main data-typography=myStyle-mainContent > ... </main>
-    <footer> ... </footer>
+<body data-typography data-paint>
+    <header>...</header>
+    <nav>
+        <ul data-layout="flex">
+            ...
+        </ul>
+    </nav>
+    <main data-typography=pagecontent>
+        <article>...</article>
+    </main>
+    <footer data-paint=pagefooter data-layout=grid-pad>
+        <section>...</section>
+        <section>...</section>
+    </footer>
 </body>
 ```
-__Look at the magic.__ Open your page in the browser. The font sizes of _all headings and content are in harmony_ with each other. 🎉
 
-### another category of algorithms
+As you can see, _fontis.css_ uses **attributes instead of classes**. The attribute marks the element from which the algorithm is applied. The attribute value refers to the configured variant. If a descendant element is marked with an algorithm attribute of the same type, the scope ends and the algorithm starts again with the specified configuration.
 
-You probably noticed that all the spaces between the blocks have disappeared. Spaces in between are the task of another category of algorithms: **layout algorithms**. A simple example:
-
-```html
-<article data-layout=flow >
-```
-Try it - that's all it takes to place the blocks (headings, paragraphs, etc.) in an article in a meaningful way.
-
-**But you might want to have more control** over what spacing a `<h2>` has, for example. No problem! Go back to your CSS to do this.
-
-```css
-[data-typography|="myStyle"] {
-    --font-scale-ratio: calc(5 / 4);
-
-    /* Expand your typography algorithm: */
-
-    & h2 {
-        --flow-space: calc(var(--SEM) * 2);
-    }
-    & h1 + h2 {
-        --flow-space: var(--SEM);
-    }
-}
-```
-
-What is happening here? You see two useful custom properties `--flow-space` and `--SEM`.  
-First to `--flow-space`: With `--flow-space` you make a _concrete suggestion_ to the layout algorithm which length can be taken for the spacing of `<h2>`.  
-`sem` stands for "scope em" - a unit calculated by _fontis.css_, which refers to the base font size of the typography scope. `--SEM` equals `1sem` (and is in upper case, because its value should not be changed by you). Yes, you read correctly: **_fontis.css_ has a "scoped rem"**. This allows lengths to scale with the text.
-
-I hope you got an idea how much _fontis.css_ can speed up your design system development and free you to create something unique.
+### How to create your own design system
 
 > To be clear: **It's pure CSS.** You don't need any tools.
 
-**Try this early version of ⛲ _fontis.css_ and share your experience.**
+Copy or import _fontis.css_ to the beginning of **your CSS file**.
+
+```css
+@import url("path/to/fontis.css");
+
+/* Your code here. */
+```
+
+#### cascade layers to hook in
+
+_fontis.css_ declares cascade layers that you can hook into. Each algorithm has a `core` and a `lib` layer.
+
+#### customize a core algorithm
+
+To customize a base algorithm, **hook into the corresponding `core` layer**. In this example, the typography algorithm is adjusted:
+
+```css
+/* ... */
+
+@layer fontis.typography.core {
+    [data-typography] {
+        --font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
+        --scale-ratio: 1.25;
+    }
+}
+```
+
+#### create a variant of a core algorithm
+
+To create a variant, add it to the library. To do this, **hook into the corresponding `lib` layer**. To identify the variant, **give it a unique name**. In this example, the name is `pagecontent`.
+
+```css
+@layer fontis.typography.lib {
+    [data-typography|="pagecontent"] {
+        --font-size-base: var(--SIZE-EM-L);
+        --heading-font-family: serif;
+        --heading-5-font-family: inherit;
+        --heading-6-font-family: inherit;
+    }
+}
+```
+
+#### 🎉 Congratulations
+
+You have created the basis for **your own design system!**.
+
+## Create something unique
+
+I hope you got an idea how much _fontis.css_ can speed up your design system development and free you to create something unique.
+
+**If you have any questions or feedback**, feel free to open a new [discussion](https://github.com/fontiscss/fontiscss/discussions).
+
+⛲
