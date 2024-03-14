@@ -76,28 +76,28 @@
                 font-size: calc(1em * var(--_font-scale));
             }
 
-            & small,
-            & h6 {
+            & small:where(:not(&)),
+            & h6:where(:not(&)) {
                 --_font-scale: var(--SCALE-S);
             }
 
-            & h5 {
+            & h5:where(:not(&)) {
                 --_font-scale: var(--SCALE-M);
             }
 
-            & h4 {
+            & h4:where(:not(&)) {
                 --_font-scale: var(--SCALE-L);
             }
 
-            & h3 {
+            & h3:where(:not(&)) {
                 --_font-scale: var(--SCALE-XL);
             }
 
-            & h2 {
+            & h2:where(:not(&)) {
                 --_font-scale: var(--SCALE-XXL);
             }
 
-            & h1 {
+            & h1:where(:not(&)) {
                 --_font-scale: var(--SCALE-XXXL);
             }
 
