@@ -194,14 +194,6 @@
             --FT-SIZE-REM-XXXXL: calc(1rem * var(--FT-SCALE-XXXXL));
             --FT-SIZE-REM-XXXXXL: calc(1rem * var(--FT-SCALE-XXXXXL));
 
-            /* # flow space */
-
-            & :is(h1, h2, h3, h4, h5, h6) {
-                margin: 0;
-                margin-block-start: max(var(--FT-SIZE-M), 1em);
-                margin-block-end: var(--FT-SIZE-M);
-            }
-
             /* # font / text */
 
             font-family: var(--ft-font-family);
@@ -210,7 +202,7 @@
             text-transform: var(--ft-text-transform);
             text-underline-offset: var(--ft-text-underline-offset);
 
-            & h6 {
+            & h6:where(:not(&)) {
                 font-family: var(--ft-heading-6-font-family);
                 font-weight: var(--ft-heading-6-font-weight);
                 letter-spacing: var(--ft-heading-6-letter-spacing);
@@ -219,7 +211,7 @@
                 text-underline-offset: var(--ft-heading-6-text-underline-offset);
             }
 
-            & h5 {
+            & h5:where(:not(&)) {
                 font-family: var(--ft-heading-5-font-family);
                 font-weight: var(--ft-heading-5-font-weight);
                 letter-spacing: var(--ft-heading-5-letter-spacing);
@@ -228,7 +220,7 @@
                 text-underline-offset: var(--ft-heading-5-text-underline-offset);
             }
 
-            & h4 {
+            & h4:where(:not(&)) {
                 font-family: var(--ft-heading-4-font-family);
                 font-weight: var(--ft-heading-4-font-weight);
                 letter-spacing: var(--ft-heading-4-letter-spacing);
@@ -237,7 +229,7 @@
                 text-underline-offset: var(--ft-heading-4-text-underline-offset);
             }
 
-            & h3 {
+            & h3:where(:not(&)) {
                 font-family: var(--ft-heading-3-font-family);
                 font-weight: var(--ft-heading-3-font-weight);
                 letter-spacing: var(--ft-heading-3-letter-spacing);
@@ -246,7 +238,7 @@
                 text-underline-offset: var(--ft-heading-3-text-underline-offset);
             }
 
-            & h2 {
+            & h2:where(:not(&)) {
                 font-family: var(--ft-heading-2-font-family);
                 font-weight: var(--ft-heading-2-font-weight);
                 letter-spacing: var(--ft-heading-2-letter-spacing);
@@ -255,7 +247,7 @@
                 text-underline-offset: var(--ft-heading-2-text-underline-offset);
             }
 
-            & h1 {
+            & h1:where(:not(&)) {
                 font-family: var(--ft-heading-1-font-family);
                 font-weight: var(--ft-heading-1-font-weight);
                 letter-spacing: var(--ft-heading-1-letter-spacing);
@@ -266,12 +258,12 @@
 
             /* # link */
 
-            & a:link {
+            & a:where(:not(&)):link {
                 text-decoration-line: var(--ft-link-text-decoration-line);
                 text-decoration-thickness: var(--ft-link-text-decoration-thickness);
             }
 
-            & a:visited {
+            & a:where(:not(&)):visited {
                 text-decoration-line: var(--ft-link-visited-text-decoration-line);
                 text-decoration-thickness: var(--ft-link-visited-text-decoration-thickness);
             }
@@ -285,6 +277,14 @@
             & :is(h1, h2, h3, h4, h5, h6) {
                 hyphens: auto;
                 text-wrap: balance;
+            }
+
+            /* # default layout if no layout algorithm is available */
+
+            & :is(h1, h2, h3, h4, h5, h6) {
+                margin: 0;
+                margin-block-start: max(var(--FT-SIZE-M), 1em);
+                margin-block-end: var(--FT-SIZE-M);
             }
         }
     }
@@ -308,7 +308,6 @@
             --fl-border-inline-end-width: var(--fl-border-width);
             --fl-column-width: 18ch;
             --fl-column-count: auto;
-            --fl-flow-max-inline-size: 50rem;
             --fl-gap: var(--fl-flow-space, 1em);
             --fl-column-gap: var(--fl-gap);
             --fl-row-gap: var(--fl-gap);
@@ -317,6 +316,7 @@
             --fl-padding-block-end: var(--fl-padding);
             --fl-padding-inline-start: var(--fl-padding);
             --fl-padding-inline-end: var(--fl-padding);
+            --ft-max-inline-size: none;
 
             column-gap: var(--fl-column-gap);
             display: block;
@@ -324,6 +324,7 @@
             list-style-type: '';
             border: none;
             padding: 0;
+            max-inline-size: var(--ft-max-inline-size);
 
             * {
                 margin: 0;
@@ -331,10 +332,6 @@
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
                 margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
-            }
-
-            & :is(article, section):where(:not(&)) > * {
-                max-inline-size: var(--fl-flow-max-inline-size);
             }
         }
     }
@@ -371,14 +368,8 @@
             padding-inline-end: max(0px, calc(var(--fl-padding-inline-end) - max(0px, var(--fl-border-inline-end-width))));
         }
 
-        [data-layout|="flow"] {
-            & > * {
-                max-inline-size: var(--fl-flow-max-inline-size);
-            }
-
-            & > * + * {
-                margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
-            }
+        [data-layout|="flow"] > * + * {
+            margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
         }
 
         [data-layout|="grid"] {
@@ -446,41 +437,41 @@
             border-inline-end-color: var(--fp-border-inline-end-color);
             text-decoration-color: var(--fp-text-decoration-color);
 
-            & h6 {
+            & h6:where(:not(&)) {
                 color: var(--fp-heading-6-text-color);
             }
 
-            & h5 {
+            & h5:where(:not(&)) {
                 color: var(--fp-heading-5-text-color);
             }
 
-            & h4 {
+            & h4:where(:not(&)) {
                 color: var(--fp-heading-4-text-color);
             }
 
-            & h3 {
+            & h3:where(:not(&)) {
                 color: var(--fp-heading-3-text-color);
             }
 
-            & h2 {
+            & h2:where(:not(&)) {
                 color: var(--fp-heading-2-text-color);
             }
 
-            & h1 {
+            & h1:where(:not(&)) {
                 color: var(--fp-heading-1-text-color);
             }
 
-            & a:link {
+            & a:where(:not(&)):link {
                 color: var(--fp-link-text-color);
                 text-decoration-color: var(--fp-link-text-decoration-color);
             }
 
-            & a:visited {
+            & a:where(:not(&)):visited {
                 color: var(--fp-link-visited-text-color);
                 text-decoration-color: var(--fp-link-visited-text-decoration-color);
             }
 
-            & a:any-link:active {
+            & a:where(:not(&)):any-link:active {
                 color: var(--fp-link-active-text-color);
                 text-decoration-color: var(--fp-link-active-text-decoration-color);
             }
