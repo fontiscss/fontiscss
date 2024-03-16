@@ -9,14 +9,27 @@
  * @license MIT License
  */
 
+@layer fontis.bootstrap;
+@layer fontis.container.core;
+@layer fontis.container.lib;
 @layer fontis.typography.core;
 @layer fontis.typography.lib;
 @layer fontis.layout.core;
 @layer fontis.layout.lib;
 @layer fontis.paint.core;
 @layer fontis.paint.lib;
+@layer fontis.postprocess;
 
 @layer fontis {
+    @layer container.core {
+        [data-container] {
+            --container-name: initial;
+            container-type: inline-size;
+            container-name: fontis var(--container-name, );
+            display: block;
+        }
+    }
+
     @layer typography.core {
 
         /**
@@ -29,6 +42,13 @@
          */
         [data-typography] {
             --font-family: system-ui, sans-serif;
+            --font-size-base: 1rem;
+            --letter-spacing: normal;
+            --scale-ratio: 1.2;
+            --text-align: start;
+            --text-transform: none;
+            --text-underline-offset: auto;
+
             --heading-font-family: inherit;
             --heading-1-font-family: var(--heading-font-family);
             --heading-2-font-family: var(--heading-font-family);
@@ -43,13 +63,47 @@
             --heading-4-font-weight: var(--heading-font-weight);
             --heading-5-font-weight: var(--heading-font-weight);
             --heading-6-font-weight: var(--heading-font-weight);
-            --font-size-base: 1rem;
+            --heading-1-font-scale: var(--SCALE-XXXL);
+            --heading-2-font-scale: var(--SCALE-XXL);
+            --heading-3-font-scale: var(--SCALE-XL);
+            --heading-4-font-scale: var(--SCALE-L);
+            --heading-5-font-scale: var(--SCALE-M);
+            --heading-6-font-scale: var(--SCALE-S);
+            --heading-text-align: inherit;
+            --heading-1-text-align: var(--heading-text-align);
+            --heading-2-text-align: var(--heading-text-align);
+            --heading-3-text-align: var(--heading-text-align);
+            --heading-4-text-align: var(--heading-text-align);
+            --heading-5-text-align: var(--heading-text-align);
+            --heading-6-text-align: var(--heading-text-align);
+            --heading-text-transform: none;
+            --heading-1-text-transform: var(--heading-text-transform);
+            --heading-2-text-transform: var(--heading-text-transform);
+            --heading-3-text-transform: var(--heading-text-transform);
+            --heading-4-text-transform: var(--heading-text-transform);
+            --heading-5-text-transform: var(--heading-text-transform);
+            --heading-6-text-transform: var(--heading-text-transform);
+            --heading-text-underline-offset: auto;
+            --heading-1-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-2-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-3-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-4-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-5-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-6-text-underline-offset: var(--heading-text-underline-offset);
+            --heading-letter-spacing: normal;
+            --heading-1-letter-spacing: var(--heading-letter-spacing);
+            --heading-2-letter-spacing: var(--heading-letter-spacing);
+            --heading-3-letter-spacing: var(--heading-letter-spacing);
+            --heading-4-letter-spacing: var(--heading-letter-spacing);
+            --heading-5-letter-spacing: var(--heading-letter-spacing);
+            --heading-6-letter-spacing: var(--heading-letter-spacing);
+
             --link-text-decoration-line: underline;
             --link-visited-text-decoration-line: var(--link-text-decoration-line);
             --link-text-decoration-thickness: from-font;
             --link-visited-text-decoration-thickness: var(--link-text-decoration-thickness);
-            --scale-ratio: 1.2;
-            --text-underline-offset: auto;
+
+            --small-font-scale: var(--SCALE-S);
 
             /* # scaling */
 
@@ -65,10 +119,6 @@
 
             /* # font sizing */
 
-            -moz-text-size-adjust: none;
-            -webkit-text-size-adjust: none;
-            text-size-adjust: none;
-
             font-size: var(--font-size-base);
             --_font-scale: var(--SCALE-M);
 
@@ -76,32 +126,35 @@
                 font-size: calc(1em * var(--_font-scale));
             }
 
-            & small:where(:not(&)),
+            & small:where(:not(&)) {
+                --_font-scale: var(--small-font-scale);
+            }
+
             & h6:where(:not(&)) {
-                --_font-scale: var(--SCALE-S);
+                --_font-scale: var(--heading-6-font-scale);
             }
 
             & h5:where(:not(&)) {
-                --_font-scale: var(--SCALE-M);
+                --_font-scale: var(--heading-5-font-scale);
             }
 
             & h4:where(:not(&)) {
-                --_font-scale: var(--SCALE-L);
+                --_font-scale: var(--heading-4-font-scale);
             }
 
             & h3:where(:not(&)) {
-                --_font-scale: var(--SCALE-XL);
+                --_font-scale: var(--heading-3-font-scale);
             }
 
             & h2:where(:not(&)) {
-                --_font-scale: var(--SCALE-XXL);
+                --_font-scale: var(--heading-2-font-scale);
             }
 
             & h1:where(:not(&)) {
-                --_font-scale: var(--SCALE-XXXL);
+                --_font-scale: var(--heading-1-font-scale);
             }
 
-            /* # Scope-dependent sizes */
+            /* # scope-dependent sizes */
 
             &,
             & * {
@@ -141,51 +194,74 @@
             --SIZE-REM-XXXXL: calc(1rem * var(--SCALE-XXXXL));
             --SIZE-REM-XXXXXL: calc(1rem * var(--SCALE-XXXXXL));
 
-            /* # flow-space */
+            /* # flow space */
 
             & :is(h1, h2, h3, h4, h5, h6) {
-                --flow-space: 1em;
                 margin: 0;
-                margin-block-start: var(--flow-space);
+                margin-block-start: max(var(--SIZE-M), 1em);
                 margin-block-end: var(--SIZE-M);
             }
 
-            & h6 {
-                --flow-space: var(--SIZE-M);
-            }
-
-            /* # font family */
+            /* # font / text */
 
             font-family: var(--font-family);
+            letter-spacing: var(--letter-spacing);
+            text-align: var(--text-align);
+            text-transform: var(--text-transform);
+            text-underline-offset: var(--text-underline-offset);
 
             & h6 {
                 font-family: var(--heading-6-font-family);
                 font-weight: var(--heading-6-font-weight);
+                letter-spacing: var(--heading-6-letter-spacing);
+                text-align: var(--heading-6-text-align);
+                text-transform: var(--heading-6-text-transform);
+                text-underline-offset: var(--heading-6-text-underline-offset);
             }
 
             & h5 {
                 font-family: var(--heading-5-font-family);
                 font-weight: var(--heading-5-font-weight);
+                letter-spacing: var(--heading-5-letter-spacing);
+                text-align: var(--heading-5-text-align);
+                text-transform: var(--heading-5-text-transform);
+                text-underline-offset: var(--heading-5-text-underline-offset);
             }
 
             & h4 {
                 font-family: var(--heading-4-font-family);
                 font-weight: var(--heading-4-font-weight);
+                letter-spacing: var(--heading-4-letter-spacing);
+                text-align: var(--heading-4-text-align);
+                text-transform: var(--heading-4-text-transform);
+                text-underline-offset: var(--heading-4-text-underline-offset);
             }
 
             & h3 {
                 font-family: var(--heading-3-font-family);
                 font-weight: var(--heading-3-font-weight);
+                letter-spacing: var(--heading-3-letter-spacing);
+                text-align: var(--heading-3-text-align);
+                text-transform: var(--heading-3-text-transform);
+                text-underline-offset: var(--heading-3-text-underline-offset);
             }
 
             & h2 {
                 font-family: var(--heading-2-font-family);
                 font-weight: var(--heading-2-font-weight);
+                letter-spacing: var(--heading-2-letter-spacing);
+                text-align: var(--heading-2-text-align);
+                text-transform: var(--heading-2-text-transform);
+                text-underline-offset: var(--heading-2-text-underline-offset);
             }
 
             & h1 {
                 font-family: var(--heading-1-font-family);
                 font-weight: var(--heading-1-font-weight);
+                letter-spacing: var(--heading-1-letter-spacing);
+                text-align: var(--heading-1-text-align);
+                text-transform: var(--heading-1-text-transform);
+                text-underline-offset: var(--heading-1-text-underline-offset);
             }
 
             /* # link */
@@ -202,7 +278,9 @@
 
             /* # adjustment */
 
-            text-underline-offset: var(--text-underline-offset);
+            -moz-text-size-adjust: none;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
 
             & :is(h1, h2, h3, h4, h5, h6) {
                 hyphens: auto;
@@ -230,6 +308,7 @@
             --border-inline-end-width: var(--border-width);
             --column-width: 18ch;
             --column-count: auto;
+            --flow-max-inline-size: 50rem;
             --gap: var(--flow-space, 1em);
             --column-gap: var(--gap);
             --row-gap: var(--gap);
@@ -240,6 +319,7 @@
             --padding-inline-end: var(--padding);
 
             column-gap: var(--column-gap);
+            display: block;
             row-gap: var(--row-gap);
             list-style-type: '';
             border: none;
@@ -250,7 +330,11 @@
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--flow-space, 1em);
+                margin-block-start: var(--flow-space, max(var(--SIZE-M), 1em));
+            }
+
+            & :is(article, section):where(:not(&)) > * {
+                max-inline-size: var(--flow-max-inline-size);
             }
         }
     }
@@ -287,8 +371,14 @@
             padding-inline-end: max(0px, calc(var(--padding-inline-end) - max(0px, var(--border-inline-end-width))));
         }
 
-        [data-layout|="flow"] > * + * {
-            margin-block-start: var(--flow-space, 1em);
+        [data-layout|="flow"] {
+            & > * {
+                max-inline-size: var(--flow-max-inline-size);
+            }
+
+            & > * + * {
+                margin-block-start: var(--flow-space, max(var(--SIZE-M), 1em));
+            }
         }
 
         [data-layout|="grid"] {
@@ -327,6 +417,7 @@
     @layer paint.core {
         [data-paint] {
             --text-color: CanvasText;
+            --text-decoration-color: currentcolor;
             --background-color: transparent;
             --border-color: currentcolor;
             --border-block-start-color: var(--border-color);
@@ -353,6 +444,7 @@
             border-block-end-color: var(--border-block-end-color);
             border-inline-start-color: var(--border-inline-start-color);
             border-inline-end-color: var(--border-inline-end-color);
+            text-decoration-color: var(--text-decoration-color);
 
             & h6 {
                 color: var(--heading-6-text-color);
