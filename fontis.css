@@ -23,9 +23,9 @@
 @layer fontis {
     @layer container.core {
         [data-container] {
-            --container-name: initial;
+            --fc-container-name: initial;
             container-type: inline-size;
-            container-name: fontis var(--container-name, );
+            container-name: fontis var(--fc-container-name, );
             display: block;
         }
     }
@@ -34,246 +34,246 @@
 
         /**
          *
-         * @yield em     --SEM                   "scope em" A calculated unit that refers to the base font size of the typography scope.
-         * @yield number --SCALE-{XS-XXXXXL}     Scaling steps
-         * @yield em     --SIZE-{XS-XXXXXL}      Scaling of --SEM
-         * @yield em     --SIZE-EM-{XS-XXXXXL}   Scaling of em
-         * @yield rem    --SIZE-REM-{XS-XXXXXL}  Scaling of rem
+         * @yield em     --FT-SEM                   "scope em" A calculated unit that refers to the base font size of the typography scope.
+         * @yield number --FT-SCALE-{XS-XXXXXL}     Scaling steps
+         * @yield em     --FT-SIZE-{XS-XXXXXL}      Scaling of --FT-SEM
+         * @yield em     --FT-SIZE-EM-{XS-XXXXXL}   Scaling of em
+         * @yield rem    --FT-SIZE-REM-{XS-XXXXXL}  Scaling of rem
          */
         [data-typography] {
-            --font-family: system-ui, sans-serif;
-            --font-size-base: 1rem;
-            --letter-spacing: normal;
-            --scale-ratio: 1.2;
-            --text-align: start;
-            --text-transform: none;
-            --text-underline-offset: auto;
+            --ft-font-family: system-ui, sans-serif;
+            --ft-font-size-base: 1rem;
+            --ft-letter-spacing: normal;
+            --ft-scale-ratio: 1.2;
+            --ft-text-align: start;
+            --ft-text-transform: none;
+            --ft-text-underline-offset: auto;
 
-            --heading-font-family: inherit;
-            --heading-1-font-family: var(--heading-font-family);
-            --heading-2-font-family: var(--heading-font-family);
-            --heading-3-font-family: var(--heading-font-family);
-            --heading-4-font-family: var(--heading-font-family);
-            --heading-5-font-family: var(--heading-font-family);
-            --heading-6-font-family: var(--heading-font-family);
-            --heading-font-weight: bolder;
-            --heading-1-font-weight: var(--heading-font-weight);
-            --heading-2-font-weight: var(--heading-font-weight);
-            --heading-3-font-weight: var(--heading-font-weight);
-            --heading-4-font-weight: var(--heading-font-weight);
-            --heading-5-font-weight: var(--heading-font-weight);
-            --heading-6-font-weight: var(--heading-font-weight);
-            --heading-1-font-scale: var(--SCALE-XXXL);
-            --heading-2-font-scale: var(--SCALE-XXL);
-            --heading-3-font-scale: var(--SCALE-XL);
-            --heading-4-font-scale: var(--SCALE-L);
-            --heading-5-font-scale: var(--SCALE-M);
-            --heading-6-font-scale: var(--SCALE-S);
-            --heading-text-align: inherit;
-            --heading-1-text-align: var(--heading-text-align);
-            --heading-2-text-align: var(--heading-text-align);
-            --heading-3-text-align: var(--heading-text-align);
-            --heading-4-text-align: var(--heading-text-align);
-            --heading-5-text-align: var(--heading-text-align);
-            --heading-6-text-align: var(--heading-text-align);
-            --heading-text-transform: none;
-            --heading-1-text-transform: var(--heading-text-transform);
-            --heading-2-text-transform: var(--heading-text-transform);
-            --heading-3-text-transform: var(--heading-text-transform);
-            --heading-4-text-transform: var(--heading-text-transform);
-            --heading-5-text-transform: var(--heading-text-transform);
-            --heading-6-text-transform: var(--heading-text-transform);
-            --heading-text-underline-offset: auto;
-            --heading-1-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-2-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-3-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-4-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-5-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-6-text-underline-offset: var(--heading-text-underline-offset);
-            --heading-letter-spacing: normal;
-            --heading-1-letter-spacing: var(--heading-letter-spacing);
-            --heading-2-letter-spacing: var(--heading-letter-spacing);
-            --heading-3-letter-spacing: var(--heading-letter-spacing);
-            --heading-4-letter-spacing: var(--heading-letter-spacing);
-            --heading-5-letter-spacing: var(--heading-letter-spacing);
-            --heading-6-letter-spacing: var(--heading-letter-spacing);
+            --ft-heading-font-family: inherit;
+            --ft-heading-1-font-family: var(--ft-heading-font-family);
+            --ft-heading-2-font-family: var(--ft-heading-font-family);
+            --ft-heading-3-font-family: var(--ft-heading-font-family);
+            --ft-heading-4-font-family: var(--ft-heading-font-family);
+            --ft-heading-5-font-family: var(--ft-heading-font-family);
+            --ft-heading-6-font-family: var(--ft-heading-font-family);
+            --ft-heading-font-weight: bolder;
+            --ft-heading-1-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-2-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-3-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-4-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-5-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-6-font-weight: var(--ft-heading-font-weight);
+            --ft-heading-1-font-scale: var(--FT-SCALE-XXXL);
+            --ft-heading-2-font-scale: var(--FT-SCALE-XXL);
+            --ft-heading-3-font-scale: var(--FT-SCALE-XL);
+            --ft-heading-4-font-scale: var(--FT-SCALE-L);
+            --ft-heading-5-font-scale: var(--FT-SCALE-M);
+            --ft-heading-6-font-scale: var(--FT-SCALE-S);
+            --ft-heading-text-align: inherit;
+            --ft-heading-1-text-align: var(--ft-heading-text-align);
+            --ft-heading-2-text-align: var(--ft-heading-text-align);
+            --ft-heading-3-text-align: var(--ft-heading-text-align);
+            --ft-heading-4-text-align: var(--ft-heading-text-align);
+            --ft-heading-5-text-align: var(--ft-heading-text-align);
+            --ft-heading-6-text-align: var(--ft-heading-text-align);
+            --ft-heading-text-transform: none;
+            --ft-heading-1-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-2-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-3-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-4-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-5-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-6-text-transform: var(--ft-heading-text-transform);
+            --ft-heading-text-underline-offset: auto;
+            --ft-heading-1-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-2-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-3-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-4-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-5-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-6-text-underline-offset: var(--ft-heading-text-underline-offset);
+            --ft-heading-letter-spacing: normal;
+            --ft-heading-1-letter-spacing: var(--ft-heading-letter-spacing);
+            --ft-heading-2-letter-spacing: var(--ft-heading-letter-spacing);
+            --ft-heading-3-letter-spacing: var(--ft-heading-letter-spacing);
+            --ft-heading-4-letter-spacing: var(--ft-heading-letter-spacing);
+            --ft-heading-5-letter-spacing: var(--ft-heading-letter-spacing);
+            --ft-heading-6-letter-spacing: var(--ft-heading-letter-spacing);
 
-            --link-text-decoration-line: underline;
-            --link-visited-text-decoration-line: var(--link-text-decoration-line);
-            --link-text-decoration-thickness: from-font;
-            --link-visited-text-decoration-thickness: var(--link-text-decoration-thickness);
+            --ft-link-text-decoration-line: underline;
+            --ft-link-visited-text-decoration-line: var(--ft-link-text-decoration-line);
+            --ft-link-text-decoration-thickness: from-font;
+            --ft-link-visited-text-decoration-thickness: var(--ft-link-text-decoration-thickness);
 
-            --small-font-scale: var(--SCALE-S);
+            --ft-small-font-scale: var(--FT-SCALE-S);
 
             /* # scaling */
 
-            --SCALE-XS: calc(var(--SCALE-S) / var(--scale-ratio));
-            --SCALE-S: calc(var(--SCALE-M) / var(--scale-ratio));
-            --SCALE-M: 1;
-            --SCALE-L: calc(var(--SCALE-M) * var(--scale-ratio));
-            --SCALE-XL: calc(var(--SCALE-L) * var(--scale-ratio));
-            --SCALE-XXL: calc(var(--SCALE-XL) * var(--scale-ratio));
-            --SCALE-XXXL: calc(var(--SCALE-XXL) * var(--scale-ratio));
-            --SCALE-XXXXL: calc(var(--SCALE-XXXL) * var(--scale-ratio));
-            --SCALE-XXXXXL: calc(var(--SCALE-XXXXL) * var(--scale-ratio));
+            --FT-SCALE-XS: calc(var(--FT-SCALE-S) / var(--ft-scale-ratio));
+            --FT-SCALE-S: calc(var(--FT-SCALE-M) / var(--ft-scale-ratio));
+            --FT-SCALE-M: 1;
+            --FT-SCALE-L: calc(var(--FT-SCALE-M) * var(--ft-scale-ratio));
+            --FT-SCALE-XL: calc(var(--FT-SCALE-L) * var(--ft-scale-ratio));
+            --FT-SCALE-XXL: calc(var(--FT-SCALE-XL) * var(--ft-scale-ratio));
+            --FT-SCALE-XXXL: calc(var(--FT-SCALE-XXL) * var(--ft-scale-ratio));
+            --FT-SCALE-XXXXL: calc(var(--FT-SCALE-XXXL) * var(--ft-scale-ratio));
+            --FT-SCALE-XXXXXL: calc(var(--FT-SCALE-XXXXL) * var(--ft-scale-ratio));
 
             /* # font sizing */
 
-            font-size: var(--font-size-base);
-            --_font-scale: var(--SCALE-M);
+            font-size: var(--ft-font-size-base);
+            --_ft-font-scale: var(--FT-SCALE-M);
 
             & :is(h1, h2, h3, h4, h5, h6, small):where(:not(&)) {
-                font-size: calc(1em * var(--_font-scale));
+                font-size: calc(1em * var(--_ft-font-scale));
             }
 
             & small:where(:not(&)) {
-                --_font-scale: var(--small-font-scale);
+                --_ft-font-scale: var(--ft-small-font-scale);
             }
 
             & h6:where(:not(&)) {
-                --_font-scale: var(--heading-6-font-scale);
+                --_ft-font-scale: var(--ft-heading-6-font-scale);
             }
 
             & h5:where(:not(&)) {
-                --_font-scale: var(--heading-5-font-scale);
+                --_ft-font-scale: var(--ft-heading-5-font-scale);
             }
 
             & h4:where(:not(&)) {
-                --_font-scale: var(--heading-4-font-scale);
+                --_ft-font-scale: var(--ft-heading-4-font-scale);
             }
 
             & h3:where(:not(&)) {
-                --_font-scale: var(--heading-3-font-scale);
+                --_ft-font-scale: var(--ft-heading-3-font-scale);
             }
 
             & h2:where(:not(&)) {
-                --_font-scale: var(--heading-2-font-scale);
+                --_ft-font-scale: var(--ft-heading-2-font-scale);
             }
 
             & h1:where(:not(&)) {
-                --_font-scale: var(--heading-1-font-scale);
+                --_ft-font-scale: var(--ft-heading-1-font-scale);
             }
 
             /* # scope-dependent sizes */
 
             &,
             & * {
-                --SEM: calc(1em / var(--_font-scale));
-                --SIZE-XS: calc(var(--SEM) * var(--SCALE-XS));
-                --SIZE-S: calc(var(--SEM) * var(--SCALE-S));
-                --SIZE-M: calc(var(--SEM) * var(--SCALE-M));
-                --SIZE-L: calc(var(--SEM) * var(--SCALE-L));
-                --SIZE-XL: calc(var(--SEM) * var(--SCALE-XL));
-                --SIZE-XXL: calc(var(--SEM) * var(--SCALE-XXL));
-                --SIZE-XXXL: calc(var(--SEM) * var(--SCALE-XXXL));
-                --SIZE-XXXXL: calc(var(--SEM) * var(--SCALE-XXXXL));
-                --SIZE-XXXXXL: calc(var(--SEM) * var(--SCALE-XXXXXL));
+                --FT-SEM: calc(1em / var(--_ft-font-scale));
+                --FT-SIZE-XS: calc(var(--FT-SEM) * var(--FT-SCALE-XS));
+                --FT-SIZE-S: calc(var(--FT-SEM) * var(--FT-SCALE-S));
+                --FT-SIZE-M: calc(var(--FT-SEM) * var(--FT-SCALE-M));
+                --FT-SIZE-L: calc(var(--FT-SEM) * var(--FT-SCALE-L));
+                --FT-SIZE-XL: calc(var(--FT-SEM) * var(--FT-SCALE-XL));
+                --FT-SIZE-XXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXL));
+                --FT-SIZE-XXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXL));
+                --FT-SIZE-XXXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXXL));
+                --FT-SIZE-XXXXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXXXL));
             }
 
             /* # em sizes */
 
-            --SIZE-EM-XS: calc(1em * var(--SCALE-XS));
-            --SIZE-EM-S: calc(1em * var(--SCALE-S));
-            --SIZE-EM-M: calc(1em * var(--SCALE-M));
-            --SIZE-EM-L: calc(1em * var(--SCALE-L));
-            --SIZE-EM-XL: calc(1em * var(--SCALE-XL));
-            --SIZE-EM-XXL: calc(1em * var(--SCALE-XXL));
-            --SIZE-EM-XXXL: calc(1em * var(--SCALE-XXXL));
-            --SIZE-EM-XXXXL: calc(1em * var(--SCALE-XXXXL));
-            --SIZE-EM-XXXXXL: calc(1em * var(--SCALE-XXXXXL));
+            --FT-SIZE-EM-XS: calc(1em * var(--FT-SCALE-XS));
+            --FT-SIZE-EM-S: calc(1em * var(--FT-SCALE-S));
+            --FT-SIZE-EM-M: calc(1em * var(--FT-SCALE-M));
+            --FT-SIZE-EM-L: calc(1em * var(--FT-SCALE-L));
+            --FT-SIZE-EM-XL: calc(1em * var(--FT-SCALE-XL));
+            --FT-SIZE-EM-XXL: calc(1em * var(--FT-SCALE-XXL));
+            --FT-SIZE-EM-XXXL: calc(1em * var(--FT-SCALE-XXXL));
+            --FT-SIZE-EM-XXXXL: calc(1em * var(--FT-SCALE-XXXXL));
+            --FT-SIZE-EM-XXXXXL: calc(1em * var(--FT-SCALE-XXXXXL));
 
             /* # global / rem sizes */
 
-            --SIZE-REM-XS: calc(1rem * var(--SCALE-XS));
-            --SIZE-REM-S: calc(1rem * var(--SCALE-S));
-            --SIZE-REM-M: calc(1rem * var(--SCALE-M));
-            --SIZE-REM-L: calc(1rem * var(--SCALE-L));
-            --SIZE-REM-XL: calc(1rem * var(--SCALE-XL));
-            --SIZE-REM-XXL: calc(1rem * var(--SCALE-XXL));
-            --SIZE-REM-XXXL: calc(1rem * var(--SCALE-XXXL));
-            --SIZE-REM-XXXXL: calc(1rem * var(--SCALE-XXXXL));
-            --SIZE-REM-XXXXXL: calc(1rem * var(--SCALE-XXXXXL));
+            --FT-SIZE-REM-XS: calc(1rem * var(--FT-SCALE-XS));
+            --FT-SIZE-REM-S: calc(1rem * var(--FT-SCALE-S));
+            --FT-SIZE-REM-M: calc(1rem * var(--FT-SCALE-M));
+            --FT-SIZE-REM-L: calc(1rem * var(--FT-SCALE-L));
+            --FT-SIZE-REM-XL: calc(1rem * var(--FT-SCALE-XL));
+            --FT-SIZE-REM-XXL: calc(1rem * var(--FT-SCALE-XXL));
+            --FT-SIZE-REM-XXXL: calc(1rem * var(--FT-SCALE-XXXL));
+            --FT-SIZE-REM-XXXXL: calc(1rem * var(--FT-SCALE-XXXXL));
+            --FT-SIZE-REM-XXXXXL: calc(1rem * var(--FT-SCALE-XXXXXL));
 
             /* # flow space */
 
             & :is(h1, h2, h3, h4, h5, h6) {
                 margin: 0;
-                margin-block-start: max(var(--SIZE-M), 1em);
-                margin-block-end: var(--SIZE-M);
+                margin-block-start: max(var(--FT-SIZE-M), 1em);
+                margin-block-end: var(--FT-SIZE-M);
             }
 
             /* # font / text */
 
-            font-family: var(--font-family);
-            letter-spacing: var(--letter-spacing);
-            text-align: var(--text-align);
-            text-transform: var(--text-transform);
-            text-underline-offset: var(--text-underline-offset);
+            font-family: var(--ft-font-family);
+            letter-spacing: var(--ft-letter-spacing);
+            text-align: var(--ft-text-align);
+            text-transform: var(--ft-text-transform);
+            text-underline-offset: var(--ft-text-underline-offset);
 
             & h6 {
-                font-family: var(--heading-6-font-family);
-                font-weight: var(--heading-6-font-weight);
-                letter-spacing: var(--heading-6-letter-spacing);
-                text-align: var(--heading-6-text-align);
-                text-transform: var(--heading-6-text-transform);
-                text-underline-offset: var(--heading-6-text-underline-offset);
+                font-family: var(--ft-heading-6-font-family);
+                font-weight: var(--ft-heading-6-font-weight);
+                letter-spacing: var(--ft-heading-6-letter-spacing);
+                text-align: var(--ft-heading-6-text-align);
+                text-transform: var(--ft-heading-6-text-transform);
+                text-underline-offset: var(--ft-heading-6-text-underline-offset);
             }
 
             & h5 {
-                font-family: var(--heading-5-font-family);
-                font-weight: var(--heading-5-font-weight);
-                letter-spacing: var(--heading-5-letter-spacing);
-                text-align: var(--heading-5-text-align);
-                text-transform: var(--heading-5-text-transform);
-                text-underline-offset: var(--heading-5-text-underline-offset);
+                font-family: var(--ft-heading-5-font-family);
+                font-weight: var(--ft-heading-5-font-weight);
+                letter-spacing: var(--ft-heading-5-letter-spacing);
+                text-align: var(--ft-heading-5-text-align);
+                text-transform: var(--ft-heading-5-text-transform);
+                text-underline-offset: var(--ft-heading-5-text-underline-offset);
             }
 
             & h4 {
-                font-family: var(--heading-4-font-family);
-                font-weight: var(--heading-4-font-weight);
-                letter-spacing: var(--heading-4-letter-spacing);
-                text-align: var(--heading-4-text-align);
-                text-transform: var(--heading-4-text-transform);
-                text-underline-offset: var(--heading-4-text-underline-offset);
+                font-family: var(--ft-heading-4-font-family);
+                font-weight: var(--ft-heading-4-font-weight);
+                letter-spacing: var(--ft-heading-4-letter-spacing);
+                text-align: var(--ft-heading-4-text-align);
+                text-transform: var(--ft-heading-4-text-transform);
+                text-underline-offset: var(--ft-heading-4-text-underline-offset);
             }
 
             & h3 {
-                font-family: var(--heading-3-font-family);
-                font-weight: var(--heading-3-font-weight);
-                letter-spacing: var(--heading-3-letter-spacing);
-                text-align: var(--heading-3-text-align);
-                text-transform: var(--heading-3-text-transform);
-                text-underline-offset: var(--heading-3-text-underline-offset);
+                font-family: var(--ft-heading-3-font-family);
+                font-weight: var(--ft-heading-3-font-weight);
+                letter-spacing: var(--ft-heading-3-letter-spacing);
+                text-align: var(--ft-heading-3-text-align);
+                text-transform: var(--ft-heading-3-text-transform);
+                text-underline-offset: var(--ft-heading-3-text-underline-offset);
             }
 
             & h2 {
-                font-family: var(--heading-2-font-family);
-                font-weight: var(--heading-2-font-weight);
-                letter-spacing: var(--heading-2-letter-spacing);
-                text-align: var(--heading-2-text-align);
-                text-transform: var(--heading-2-text-transform);
-                text-underline-offset: var(--heading-2-text-underline-offset);
+                font-family: var(--ft-heading-2-font-family);
+                font-weight: var(--ft-heading-2-font-weight);
+                letter-spacing: var(--ft-heading-2-letter-spacing);
+                text-align: var(--ft-heading-2-text-align);
+                text-transform: var(--ft-heading-2-text-transform);
+                text-underline-offset: var(--ft-heading-2-text-underline-offset);
             }
 
             & h1 {
-                font-family: var(--heading-1-font-family);
-                font-weight: var(--heading-1-font-weight);
-                letter-spacing: var(--heading-1-letter-spacing);
-                text-align: var(--heading-1-text-align);
-                text-transform: var(--heading-1-text-transform);
-                text-underline-offset: var(--heading-1-text-underline-offset);
+                font-family: var(--ft-heading-1-font-family);
+                font-weight: var(--ft-heading-1-font-weight);
+                letter-spacing: var(--ft-heading-1-letter-spacing);
+                text-align: var(--ft-heading-1-text-align);
+                text-transform: var(--ft-heading-1-text-transform);
+                text-underline-offset: var(--ft-heading-1-text-underline-offset);
             }
 
             /* # link */
 
             & a:link {
-                text-decoration-line: var(--link-text-decoration-line);
-                text-decoration-thickness: var(--link-text-decoration-thickness);
+                text-decoration-line: var(--ft-link-text-decoration-line);
+                text-decoration-thickness: var(--ft-link-text-decoration-thickness);
             }
 
             & a:visited {
-                text-decoration-line: var(--link-visited-text-decoration-line);
-                text-decoration-thickness: var(--link-visited-text-decoration-thickness);
+                text-decoration-line: var(--ft-link-visited-text-decoration-line);
+                text-decoration-thickness: var(--ft-link-visited-text-decoration-thickness);
             }
 
             /* # adjustment */
@@ -291,36 +291,36 @@
 
     @layer layout.core {
         [data-layout] {
-            --border-radius: .5em;
-            --border-top-left-radius: var(--border-radius);
-            --border-top-right-radius: var(--border-radius);
-            --border-bottom-right-radius: var(--border-radius);
-            --border-bottom-left-radius: var(--border-radius);
-            --border-style: solid;
-            --border-block-start-style: var(--border-style);
-            --border-block-end-style: var(--border-style);
-            --border-inline-start-style: var(--border-style);
-            --border-inline-end-style: var(--border-style);
-            --border-width: max(0.2em, 1px);
-            --border-block-start-width: var(--border-width);
-            --border-block-end-width: var(--border-width);
-            --border-inline-start-width: var(--border-width);
-            --border-inline-end-width: var(--border-width);
-            --column-width: 18ch;
-            --column-count: auto;
-            --flow-max-inline-size: 50rem;
-            --gap: var(--flow-space, 1em);
-            --column-gap: var(--gap);
-            --row-gap: var(--gap);
-            --padding: var(--SIZE-M, 1em);
-            --padding-block-start: var(--padding);
-            --padding-block-end: var(--padding);
-            --padding-inline-start: var(--padding);
-            --padding-inline-end: var(--padding);
+            --fl-border-radius: .5em;
+            --fl-border-top-left-radius: var(--fl-border-radius);
+            --fl-border-top-right-radius: var(--fl-border-radius);
+            --fl-border-bottom-right-radius: var(--fl-border-radius);
+            --fl-border-bottom-left-radius: var(--fl-border-radius);
+            --fl-border-style: solid;
+            --fl-border-block-start-style: var(--fl-border-style);
+            --fl-border-block-end-style: var(--fl-border-style);
+            --fl-border-inline-start-style: var(--fl-border-style);
+            --fl-border-inline-end-style: var(--fl-border-style);
+            --fl-border-width: max(0.2em, 1px);
+            --fl-border-block-start-width: var(--fl-border-width);
+            --fl-border-block-end-width: var(--fl-border-width);
+            --fl-border-inline-start-width: var(--fl-border-width);
+            --fl-border-inline-end-width: var(--fl-border-width);
+            --fl-column-width: 18ch;
+            --fl-column-count: auto;
+            --fl-flow-max-inline-size: 50rem;
+            --fl-gap: var(--fl-flow-space, 1em);
+            --fl-column-gap: var(--fl-gap);
+            --fl-row-gap: var(--fl-gap);
+            --fl-padding: var(--FT-SIZE-M, 1em);
+            --fl-padding-block-start: var(--fl-padding);
+            --fl-padding-block-end: var(--fl-padding);
+            --fl-padding-inline-start: var(--fl-padding);
+            --fl-padding-inline-end: var(--fl-padding);
 
-            column-gap: var(--column-gap);
+            column-gap: var(--fl-column-gap);
             display: block;
-            row-gap: var(--row-gap);
+            row-gap: var(--fl-row-gap);
             list-style-type: '';
             border: none;
             padding: 0;
@@ -330,11 +330,11 @@
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--flow-space, max(var(--SIZE-M), 1em));
+                margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
             }
 
             & :is(article, section):where(:not(&)) > * {
-                max-inline-size: var(--flow-max-inline-size);
+                max-inline-size: var(--fl-flow-max-inline-size);
             }
         }
     }
@@ -343,53 +343,53 @@
 
         [data-layout$="-pad"],
         [data-layout$="-box"] {
-            border-top-left-radius: var(--border-top-left-radius);
-            border-top-right-radius: var(--border-top-right-radius);
-            border-bottom-right-radius: var(--border-bottom-right-radius);
-            border-bottom-left-radius: var(--border-bottom-left-radius);
+            border-top-left-radius: var(--fl-border-top-left-radius);
+            border-top-right-radius: var(--fl-border-top-right-radius);
+            border-bottom-right-radius: var(--fl-border-bottom-right-radius);
+            border-bottom-left-radius: var(--fl-border-bottom-left-radius);
         }
 
         [data-layout$="-pad"] {
-            padding-block-start: var(--padding-block-start);
-            padding-block-end: var(--padding-block-end);
-            padding-inline-start: var(--padding-inline-start);
-            padding-inline-end: var(--padding-inline-end);
+            padding-block-start: var(--fl-padding-block-start);
+            padding-block-end: var(--fl-padding-block-end);
+            padding-inline-start: var(--fl-padding-inline-start);
+            padding-inline-end: var(--fl-padding-inline-end);
         }
 
         [data-layout$="-box"] {
-            border-block-start-style: var(--border-block-start-style);
-            border-block-end-style: var(--border-block-end-style);
-            border-inline-start-style: var(--border-inline-start-style);
-            border-inline-end-style: var(--border-inline-end-style);
-            border-block-start-width: var(--border-block-start-width);
-            border-block-end-width: var(--border-block-end-width);
-            border-inline-start-width: var(--border-inline-start-width);
-            border-inline-end-width: var(--border-inline-end-width);
-            padding-block-start: max(0px, calc(var(--padding-block-start) - max(0px, var(--border-block-start-width))));
-            padding-block-end: max(0px, calc(var(--padding-block-end) - max(0px, var(--border-block-end-width))));
-            padding-inline-start: max(0px, calc(var(--padding-inline-start) - max(0px, var(--border-inline-start-width))));
-            padding-inline-end: max(0px, calc(var(--padding-inline-end) - max(0px, var(--border-inline-end-width))));
+            border-block-start-style: var(--fl-border-block-start-style);
+            border-block-end-style: var(--fl-border-block-end-style);
+            border-inline-start-style: var(--fl-border-inline-start-style);
+            border-inline-end-style: var(--fl-border-inline-end-style);
+            border-block-start-width: var(--fl-border-block-start-width);
+            border-block-end-width: var(--fl-border-block-end-width);
+            border-inline-start-width: var(--fl-border-inline-start-width);
+            border-inline-end-width: var(--fl-border-inline-end-width);
+            padding-block-start: max(0px, calc(var(--fl-padding-block-start) - max(0px, var(--fl-border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--fl-padding-block-end) - max(0px, var(--fl-border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--fl-padding-inline-start) - max(0px, var(--fl-border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--fl-padding-inline-end) - max(0px, var(--fl-border-inline-end-width))));
         }
 
         [data-layout|="flow"] {
             & > * {
-                max-inline-size: var(--flow-max-inline-size);
+                max-inline-size: var(--fl-flow-max-inline-size);
             }
 
             & > * + * {
-                margin-block-start: var(--flow-space, max(var(--SIZE-M), 1em));
+                margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
             }
         }
 
         [data-layout|="grid"] {
-            --column-count: auto-fit;
+            --fl-column-count: auto-fit;
             display: grid;
-            grid-template-columns: repeat(var(--column-count), minmax(min(100%, var(--column-width)), 1fr));
+            grid-template-columns: repeat(var(--fl-column-count), minmax(min(100%, var(--fl-column-width)), 1fr));
         }
 
         [data-layout|="chain"] {
             display: grid;
-            grid-auto-columns: var(--column-width);
+            grid-auto-columns: var(--fl-column-width);
             grid-auto-flow: column;
             overflow: auto;
         }
@@ -416,73 +416,73 @@
 
     @layer paint.core {
         [data-paint] {
-            --text-color: CanvasText;
-            --text-decoration-color: currentcolor;
-            --background-color: transparent;
-            --border-color: currentcolor;
-            --border-block-start-color: var(--border-color);
-            --border-block-end-color: var(--border-color);
-            --border-inline-start-color: var(--border-color);
-            --border-inline-end-color: var(--border-color);
-            --heading-text-color: currentcolor;
-            --heading-1-text-color: var(--heading-text-color);
-            --heading-2-text-color: var(--heading-text-color);
-            --heading-3-text-color: var(--heading-text-color);
-            --heading-4-text-color: var(--heading-text-color);
-            --heading-5-text-color: var(--heading-text-color);
-            --heading-6-text-color: var(--heading-text-color);
-            --link-text-color: LinkText;
-            --link-visited-text-color: VisitedText;
-            --link-active-text-color: ActiveText;
-            --link-text-decoration-color: currentcolor;
-            --link-visited-text-decoration-color: currentcolor;
-            --link-active-text-decoration-color: currentcolor;
+            --fp-text-color: CanvasText;
+            --fp-text-decoration-color: currentcolor;
+            --fp-background-color: transparent;
+            --fp-border-color: currentcolor;
+            --fp-border-block-start-color: var(--fp-border-color);
+            --fp-border-block-end-color: var(--fp-border-color);
+            --fp-border-inline-start-color: var(--fp-border-color);
+            --fp-border-inline-end-color: var(--fp-border-color);
+            --fp-heading-text-color: currentcolor;
+            --fp-heading-1-text-color: var(--fp-heading-text-color);
+            --fp-heading-2-text-color: var(--fp-heading-text-color);
+            --fp-heading-3-text-color: var(--fp-heading-text-color);
+            --fp-heading-4-text-color: var(--fp-heading-text-color);
+            --fp-heading-5-text-color: var(--fp-heading-text-color);
+            --fp-heading-6-text-color: var(--fp-heading-text-color);
+            --fp-link-text-color: LinkText;
+            --fp-link-visited-text-color: VisitedText;
+            --fp-link-active-text-color: ActiveText;
+            --fp-link-text-decoration-color: currentcolor;
+            --fp-link-visited-text-decoration-color: currentcolor;
+            --fp-link-active-text-decoration-color: currentcolor;
 
-            color: var(--text-color);
-            background-color: var(--background-color);
-            border-block-start-color: var(--border-block-start-color);
-            border-block-end-color: var(--border-block-end-color);
-            border-inline-start-color: var(--border-inline-start-color);
-            border-inline-end-color: var(--border-inline-end-color);
-            text-decoration-color: var(--text-decoration-color);
+            color: var(--fp-text-color);
+            background-color: var(--fp-background-color);
+            border-block-start-color: var(--fp-border-block-start-color);
+            border-block-end-color: var(--fp-border-block-end-color);
+            border-inline-start-color: var(--fp-border-inline-start-color);
+            border-inline-end-color: var(--fp-border-inline-end-color);
+            text-decoration-color: var(--fp-text-decoration-color);
 
             & h6 {
-                color: var(--heading-6-text-color);
+                color: var(--fp-heading-6-text-color);
             }
 
             & h5 {
-                color: var(--heading-5-text-color);
+                color: var(--fp-heading-5-text-color);
             }
 
             & h4 {
-                color: var(--heading-4-text-color);
+                color: var(--fp-heading-4-text-color);
             }
 
             & h3 {
-                color: var(--heading-3-text-color);
+                color: var(--fp-heading-3-text-color);
             }
 
             & h2 {
-                color: var(--heading-2-text-color);
+                color: var(--fp-heading-2-text-color);
             }
 
             & h1 {
-                color: var(--heading-1-text-color);
+                color: var(--fp-heading-1-text-color);
             }
 
             & a:link {
-                color: var(--link-text-color);
-                text-decoration-color: var(--link-text-decoration-color);
+                color: var(--fp-link-text-color);
+                text-decoration-color: var(--fp-link-text-decoration-color);
             }
 
             & a:visited {
-                color: var(--link-visited-text-color);
-                text-decoration-color: var(--link-visited-text-decoration-color);
+                color: var(--fp-link-visited-text-color);
+                text-decoration-color: var(--fp-link-visited-text-decoration-color);
             }
 
             & a:any-link:active {
-                color: var(--link-active-text-color);
-                text-decoration-color: var(--link-active-text-decoration-color);
+                color: var(--fp-link-active-text-color);
+                text-decoration-color: var(--fp-link-active-text-decoration-color);
             }
         }
     }
