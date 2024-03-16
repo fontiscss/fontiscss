@@ -66,8 +66,8 @@ To customize a base algorithm, **hook into the corresponding `core` layer**. In 
 
 @layer fontis.typography.core {
     [data-typography] {
-        --font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
-        --scale-ratio: 1.25;
+        --ft-font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
+        --ft-scale-ratio: 1.25;
     }
 }
 ```
@@ -79,10 +79,10 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 ```css
 @layer fontis.typography.lib {
     [data-typography|="pagecontent"] {
-        --font-size-base: var(--SIZE-EM-L);
-        --heading-font-family: serif;
-        --heading-5-font-family: inherit;
-        --heading-6-font-family: inherit;
+        --ft-font-size-base: var(--FT-SIZE-EM-L);
+        --ft-heading-font-family: serif;
+        --ft-heading-5-font-family: inherit;
+        --ft-heading-6-font-family: inherit;
     }
 }
 ```
