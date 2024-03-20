@@ -34,16 +34,15 @@
 
         /**
          *
-         * @yield em     --FT-SEM                   "scope em" A calculated unit that refers to the base font size of the typography scope.
+         * @yield em     --FT-SLH                   "scope lh" A calculated unit that refers to the base line height of the typography scope.
          * @yield number --FT-SCALE-{XS-XXXXXL}     Scaling steps
-         * @yield em     --FT-SIZE-{XS-XXXXXL}      Scaling of --FT-SEM
-         * @yield em     --FT-SIZE-EM-{XS-XXXXXL}   Scaling of em
-         * @yield rem    --FT-SIZE-REM-{XS-XXXXXL}  Scaling of rem
+         * @yield em     --FT-SIZE-{XS-XXXXXL}      Scaling of --FT-SLH
          */
         [data-typography] {
             --ft-font-family: system-ui, sans-serif;
             --ft-font-size-base: 1rem;
             --ft-letter-spacing: normal;
+            --ft-line-height: 1.5;
             --ft-scale-ratio: 1.2;
             --ft-text-align: start;
             --ft-text-transform: none;
@@ -69,6 +68,12 @@
             --ft-heading-4-font-scale: var(--FT-SCALE-L);
             --ft-heading-5-font-scale: var(--FT-SCALE-M);
             --ft-heading-6-font-scale: var(--FT-SCALE-S);
+            --ft-heading-1-line-height: 1.3;
+            --ft-heading-2-line-height: 1.4;
+            --ft-heading-3-line-height: 1.5;
+            --ft-heading-4-line-height: 1.5;
+            --ft-heading-5-line-height: 1.5;
+            --ft-heading-6-line-height: 1.5;
             --ft-heading-text-align: inherit;
             --ft-heading-1-text-align: var(--ft-heading-text-align);
             --ft-heading-2-text-align: var(--ft-heading-text-align);
@@ -158,46 +163,23 @@
 
             &,
             & * {
-                --FT-SEM: calc(1em / var(--_ft-font-scale));
-                --FT-SIZE-XS: calc(var(--FT-SEM) * var(--FT-SCALE-XS));
-                --FT-SIZE-S: calc(var(--FT-SEM) * var(--FT-SCALE-S));
-                --FT-SIZE-M: calc(var(--FT-SEM) * var(--FT-SCALE-M));
-                --FT-SIZE-L: calc(var(--FT-SEM) * var(--FT-SCALE-L));
-                --FT-SIZE-XL: calc(var(--FT-SEM) * var(--FT-SCALE-XL));
-                --FT-SIZE-XXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXL));
-                --FT-SIZE-XXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXL));
-                --FT-SIZE-XXXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXXL));
-                --FT-SIZE-XXXXXL: calc(var(--FT-SEM) * var(--FT-SCALE-XXXXXL));
+                --FT-SLH: calc((1em / var(--_ft-font-scale)) * var(--ft-line-height));
+                --FT-SIZE-XS: calc(var(--FT-SLH) * var(--FT-SCALE-XS));
+                --FT-SIZE-S: calc(var(--FT-SLH) * var(--FT-SCALE-S));
+                --FT-SIZE-M: calc(var(--FT-SLH) * var(--FT-SCALE-M));
+                --FT-SIZE-L: calc(var(--FT-SLH) * var(--FT-SCALE-L));
+                --FT-SIZE-XL: calc(var(--FT-SLH) * var(--FT-SCALE-XL));
+                --FT-SIZE-XXL: calc(var(--FT-SLH) * var(--FT-SCALE-XXL));
+                --FT-SIZE-XXXL: calc(var(--FT-SLH) * var(--FT-SCALE-XXXL));
+                --FT-SIZE-XXXXL: calc(var(--FT-SLH) * var(--FT-SCALE-XXXXL));
+                --FT-SIZE-XXXXXL: calc(var(--FT-SLH) * var(--FT-SCALE-XXXXXL));
             }
-
-            /* # em sizes */
-
-            --FT-SIZE-EM-XS: calc(1em * var(--FT-SCALE-XS));
-            --FT-SIZE-EM-S: calc(1em * var(--FT-SCALE-S));
-            --FT-SIZE-EM-M: calc(1em * var(--FT-SCALE-M));
-            --FT-SIZE-EM-L: calc(1em * var(--FT-SCALE-L));
-            --FT-SIZE-EM-XL: calc(1em * var(--FT-SCALE-XL));
-            --FT-SIZE-EM-XXL: calc(1em * var(--FT-SCALE-XXL));
-            --FT-SIZE-EM-XXXL: calc(1em * var(--FT-SCALE-XXXL));
-            --FT-SIZE-EM-XXXXL: calc(1em * var(--FT-SCALE-XXXXL));
-            --FT-SIZE-EM-XXXXXL: calc(1em * var(--FT-SCALE-XXXXXL));
-
-            /* # global / rem sizes */
-
-            --FT-SIZE-REM-XS: calc(1rem * var(--FT-SCALE-XS));
-            --FT-SIZE-REM-S: calc(1rem * var(--FT-SCALE-S));
-            --FT-SIZE-REM-M: calc(1rem * var(--FT-SCALE-M));
-            --FT-SIZE-REM-L: calc(1rem * var(--FT-SCALE-L));
-            --FT-SIZE-REM-XL: calc(1rem * var(--FT-SCALE-XL));
-            --FT-SIZE-REM-XXL: calc(1rem * var(--FT-SCALE-XXL));
-            --FT-SIZE-REM-XXXL: calc(1rem * var(--FT-SCALE-XXXL));
-            --FT-SIZE-REM-XXXXL: calc(1rem * var(--FT-SCALE-XXXXL));
-            --FT-SIZE-REM-XXXXXL: calc(1rem * var(--FT-SCALE-XXXXXL));
 
             /* # font / text */
 
             font-family: var(--ft-font-family);
             letter-spacing: var(--ft-letter-spacing);
+            line-height: var(--ft-line-height);
             text-align: var(--ft-text-align);
             text-transform: var(--ft-text-transform);
             text-underline-offset: var(--ft-text-underline-offset);
@@ -206,6 +188,7 @@
                 font-family: var(--ft-heading-6-font-family);
                 font-weight: var(--ft-heading-6-font-weight);
                 letter-spacing: var(--ft-heading-6-letter-spacing);
+                line-height: var(--ft-heading-6-line-height);
                 text-align: var(--ft-heading-6-text-align);
                 text-transform: var(--ft-heading-6-text-transform);
                 text-underline-offset: var(--ft-heading-6-text-underline-offset);
@@ -215,6 +198,7 @@
                 font-family: var(--ft-heading-5-font-family);
                 font-weight: var(--ft-heading-5-font-weight);
                 letter-spacing: var(--ft-heading-5-letter-spacing);
+                line-height: var(--ft-heading-5-line-height);
                 text-align: var(--ft-heading-5-text-align);
                 text-transform: var(--ft-heading-5-text-transform);
                 text-underline-offset: var(--ft-heading-5-text-underline-offset);
@@ -224,6 +208,7 @@
                 font-family: var(--ft-heading-4-font-family);
                 font-weight: var(--ft-heading-4-font-weight);
                 letter-spacing: var(--ft-heading-4-letter-spacing);
+                line-height: var(--ft-heading-4-line-height);
                 text-align: var(--ft-heading-4-text-align);
                 text-transform: var(--ft-heading-4-text-transform);
                 text-underline-offset: var(--ft-heading-4-text-underline-offset);
@@ -233,6 +218,7 @@
                 font-family: var(--ft-heading-3-font-family);
                 font-weight: var(--ft-heading-3-font-weight);
                 letter-spacing: var(--ft-heading-3-letter-spacing);
+                line-height: var(--ft-heading-3-line-height);
                 text-align: var(--ft-heading-3-text-align);
                 text-transform: var(--ft-heading-3-text-transform);
                 text-underline-offset: var(--ft-heading-3-text-underline-offset);
@@ -242,6 +228,7 @@
                 font-family: var(--ft-heading-2-font-family);
                 font-weight: var(--ft-heading-2-font-weight);
                 letter-spacing: var(--ft-heading-2-letter-spacing);
+                line-height: var(--ft-heading-2-line-height);
                 text-align: var(--ft-heading-2-text-align);
                 text-transform: var(--ft-heading-2-text-transform);
                 text-underline-offset: var(--ft-heading-2-text-underline-offset);
@@ -251,6 +238,7 @@
                 font-family: var(--ft-heading-1-font-family);
                 font-weight: var(--ft-heading-1-font-weight);
                 letter-spacing: var(--ft-heading-1-letter-spacing);
+                line-height: var(--ft-heading-1-line-height);
                 text-align: var(--ft-heading-1-text-align);
                 text-transform: var(--ft-heading-1-text-transform);
                 text-underline-offset: var(--ft-heading-1-text-underline-offset);
@@ -283,8 +271,16 @@
 
             & :is(h1, h2, h3, h4, h5, h6) {
                 margin: 0;
-                margin-block-start: max(var(--FT-SIZE-M), 1em);
+                margin-block-start: max(var(--FT-SIZE-M), 1lh);
                 margin-block-end: var(--FT-SIZE-M);
+            }
+
+            & img {
+                max-inline-size: 100%;
+            }
+
+            & :where(figure, figure > picture) > img {
+                display: block;
             }
         }
     }
@@ -308,10 +304,10 @@
             --fl-border-inline-end-width: var(--fl-border-width);
             --fl-column-width: 18ch;
             --fl-column-count: auto;
-            --fl-gap: var(--fl-flow-space, 1em);
+            --fl-gap: var(--fl-flow-space, 1lh);
             --fl-column-gap: var(--fl-gap);
             --fl-row-gap: var(--fl-gap);
-            --fl-padding: var(--FT-SIZE-M, 1em);
+            --fl-padding: var(--FT-SIZE-M, 1lh);
             --fl-padding-block-start: var(--fl-padding);
             --fl-padding-block-end: var(--fl-padding);
             --fl-padding-inline-start: var(--fl-padding);
@@ -331,7 +327,17 @@
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
+                margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1lh));
+            }
+
+            & img:where(:not(&)) {
+                max-inline-size: 100%;
+            }
+
+            & > img:where(:not(&)),
+            & > :where(picture) > img:where(:not(&)),
+            & :where(figure, figure > picture) > img:where(:not(&)) {
+                display: block;
             }
         }
     }
@@ -369,7 +375,7 @@
         }
 
         [data-layout|="flow"] > * + * {
-            margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1em));
+            margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1lh));
         }
 
         [data-layout|="grid"] {
