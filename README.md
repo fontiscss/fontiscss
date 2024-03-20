@@ -79,7 +79,7 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 ```css
 @layer fontis.typography.lib {
     [data-typography|="pagecontent"] {
-        --ft-font-size-base: var(--FT-SIZE-EM-L);
+        --ft-font-size-base: calc(1em * var(--FT-SCALE-L));
         --ft-heading-font-family: serif;
         --ft-heading-5-font-family: inherit;
         --ft-heading-6-font-family: inherit;
