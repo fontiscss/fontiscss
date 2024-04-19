@@ -258,7 +258,6 @@
 
             /* # adjustment */
 
-            -moz-text-size-adjust: none;
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
 
@@ -291,11 +290,6 @@
 
     @layer layout.core {
         [data-layout] {
-            --fl-border-radius: 0;
-            --fl-border-start-start-radius: var(--fl-border-radius);
-            --fl-border-start-end-radius: var(--fl-border-radius);
-            --fl-border-end-end-radius: var(--fl-border-radius);
-            --fl-border-end-start-radius: var(--fl-border-radius);
             --fl-border-style: none;
             --fl-border-block-start-style: var(--fl-border-style);
             --fl-border-block-end-style: var(--fl-border-style);
@@ -313,27 +307,6 @@
             --fl-padding-inline-end: var(--fl-padding);
             --ft-max-inline-size: none;
 
-            --fl-child-border-radius: 0;
-            --fl-child-border-start-start-radius: var(--fl-child-border-radius);
-            --fl-child-border-start-end-radius: var(--fl-child-border-radius);
-            --fl-child-border-end-start-radius: var(--fl-child-border-radius);
-            --fl-child-border-end-end-radius: var(--fl-child-border-radius);
-            --fl-child-border-style: none;
-            --fl-child-border-block-start-style: var(--fl-child-border-style);
-            --fl-child-border-block-end-style: var(--fl-child-border-style);
-            --fl-child-border-inline-start-style: var(--fl-child-border-style);
-            --fl-child-border-inline-end-style: var(--fl-child-border-style);
-            --fl-child-border-width: 3px;
-            --fl-child-border-block-start-width: var(--fl-child-border-width);
-            --fl-child-border-block-end-width: var(--fl-child-border-width);
-            --fl-child-border-inline-start-width: var(--fl-child-border-width);
-            --fl-child-border-inline-end-width: var(--fl-child-border-width);
-            --fl-child-padding: 0;
-            --fl-child-padding-block-start: var(--fl-child-padding);
-            --fl-child-padding-block-end: var(--fl-child-padding);
-            --fl-child-padding-inline-start: var(--fl-child-padding);
-            --fl-child-padding-inline-end: var(--fl-child-padding);
-
             --fl-column-width: 18ch;
             --fl-column-count: auto;
             --fl-gap: var(--FT-SIZE-M, 1lh);
@@ -345,10 +318,6 @@
             column-gap: var(--fl-column-gap);
             row-gap: var(--fl-row-gap);
 
-            border-start-start-radius: var(--fl-border-start-start-radius);
-            border-start-end-radius: var(--fl-border-start-end-radius);
-            border-end-start-radius: var(--fl-border-end-start-radius);
-            border-end-end-radius: var(--fl-border-end-end-radius);
             border-block-start-style: var(--fl-border-block-start-style);
             border-block-end-style: var(--fl-border-block-end-style);
             border-inline-start-style: var(--fl-border-inline-start-style);
@@ -362,26 +331,6 @@
             padding-inline-start: var(--fl-padding-inline-start);
             padding-inline-end: var(--fl-padding-inline-end);
             max-inline-size: var(--ft-max-inline-size);
-
-            & > :where(:not(&, picture)),
-            & > :where(picture:not(&)) > :where(img:not(&)) {
-                border-start-start-radius: var(--fl-child-border-start-start-radius);
-                border-start-end-radius: var(--fl-child-border-start-end-radius);
-                border-end-start-radius: var(--fl-child-border-end-start-radius);
-                border-end-end-radius: var(--fl-child-border-end-end-radius);
-                border-block-start-style: var(--fl-child-border-block-start-style);
-                border-block-end-style: var(--fl-child-border-block-end-style);
-                border-inline-start-style: var(--fl-child-border-inline-start-style);
-                border-inline-end-style: var(--fl-child-border-inline-end-style);
-                border-block-start-width: var(--fl-child-border-block-start-width);
-                border-block-end-width: var(--fl-child-border-block-end-width);
-                border-inline-start-width: var(--fl-child-border-inline-start-width);
-                border-inline-end-width: var(--fl-child-border-inline-end-width);
-                padding-block-start: var(--fl-child-padding-block-start);
-                padding-block-end: var(--fl-child-padding-block-end);
-                padding-inline-start: var(--fl-child-padding-inline-start);
-                padding-inline-end: var(--fl-child-padding-inline-end);
-            }
 
             * {
                 margin: 0;
@@ -402,7 +351,7 @@
             }
         }
 
-        :is([data-layout|="flow"], [data-layout^="flow "]) > * + * {
+        [data-layout|="flow"] > * + * {
             margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1lh));
         }
     }
