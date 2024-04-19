@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/*!
+ * ⛲ fontis.css 
+ *
+ * The Algorithmic CSS Framework
+ *
+ * @author David J. Schwarz / Ringsdorf <mail+oss@davidschwarz.eu>
+ * @license MIT License
+ */
+
+@layer fontis.layout.lib {
+
+    [data-layout|="grid"] {
+        --fl-column-count: auto-fit;
+        display: grid;
+        grid-template-columns: repeat(var(--fl-column-count), minmax(min(100%, var(--fl-column-width)), 1fr));
+    }
+
+    [data-layout|="chain"] {
+        display: grid;
+        grid-auto-columns: var(--fl-column-width);
+        grid-auto-flow: column;
+        overflow: auto;
+    }
+
+    [data-layout|="flex"] {
+        display: flex;
+        overflow: auto;
+    }
+
+    [data-layout|="string"] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    [data-layout|="flexgrid"] {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            flex-grow: 1;
+        }
+    }
+
+    [data-layout|="flow"],
+    [data-layout|="grid"],
+    [data-layout|="chain"],
+    [data-layout|="flex"],
+    [data-layout|="string"],
+    [data-layout|="flexgrid"] {
+
+        &:where([data-layout$="-box"],
+            [data-layout$="-pack"],
+            [data-layout$="-pad"]) {
+            --fl-padding: var(--FT-SIZE-M, 1lh);
+        }
+
+        &:where([data-layout$="-pack"]) {
+            padding-block-start: max(0px, calc(var(--fl-padding-block-start) - max(0px, var(--fl-border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--fl-padding-block-end) - max(0px, var(--fl-border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--fl-padding-inline-start) - max(0px, var(--fl-border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--fl-padding-inline-end) - max(0px, var(--fl-border-inline-end-width))));
+        }
+
+        &:where([data-layout$="-box"],
+            [data-layout$="-pack"]) {
+            --fl-border-style: solid;
+        }
+    }
+}
