@@ -88,7 +88,7 @@
             --ft-heading-4-text-transform: var(--ft-heading-text-transform);
             --ft-heading-5-text-transform: var(--ft-heading-text-transform);
             --ft-heading-6-text-transform: var(--ft-heading-text-transform);
-            --ft-heading-text-underline-offset: auto;
+            --ft-heading-text-underline-offset: var(--ft-text-underline-offset);
             --ft-heading-1-text-underline-offset: var(--ft-heading-text-underline-offset);
             --ft-heading-2-text-underline-offset: var(--ft-heading-text-underline-offset);
             --ft-heading-3-text-underline-offset: var(--ft-heading-text-underline-offset);
