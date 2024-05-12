@@ -364,7 +364,7 @@
         [data-paint] {
             --fp-text-color: CanvasText;
             --fp-text-decoration-color: currentcolor;
-            --fp-background-color: transparent;
+            --fp-background-color: Canvas;
             --fp-border-color: currentcolor;
             --fp-border-block-start-color: var(--fp-border-color);
             --fp-border-block-end-color: var(--fp-border-color);
