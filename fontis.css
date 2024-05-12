@@ -351,6 +351,10 @@
             }
         }
 
+        [data-layout]:where(body) {
+            margin: 0;
+        }
+
         [data-layout|="flow"] > * + * {
             margin-block-start: var(--fl-flow-space, max(var(--FT-SIZE-M), 1lh));
         }
