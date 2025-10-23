@@ -35,14 +35,14 @@ Before you create your first design system with _keen.css_, take a look at how i
 <body>
     <header>...</header>
     <nav>
-        <ul data-layout=flex>
+        <ul keen-layout=flex>
             ...
         </ul>
     </nav>
     <main keen-type=pagecontent>
         <article>...</article>
     </main>
-    <footer keen-skin=pagefooter data-layout=grid-pad>
+    <footer keen-skin=pagefooter keen-layout=grid-pad>
         <section>...</section>
         <section>...</section>
     </footer>

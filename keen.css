@@ -289,7 +289,7 @@
     }
 
     @layer layout.core {
-        [data-layout] {
+        [keen-layout] {
             --kl-border-style: none;
             --kl-border-block-start-style: var(--kl-border-style);
             --kl-border-block-end-style: var(--kl-border-style);
@@ -351,11 +351,11 @@
             }
         }
 
-        [data-layout]:where(body) {
+        [keen-layout]:where(body) {
             margin: 0;
         }
 
-        [data-layout|="flow"] > * + * {
+        [keen-layout|="flow"] > * + * {
             margin-block-start: var(--kl-flow-space, max(var(--KT-SIZE-M), 1lh));
         }
     }

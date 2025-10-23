@@ -11,30 +11,30 @@
 
 @layer keen.layout.lib {
 
-    [data-layout|="grid"] {
+    [keen-layout|="grid"] {
         --kl-column-count: auto-fit;
         display: grid;
         grid-template-columns: repeat(var(--kl-column-count), minmax(min(100%, var(--kl-column-width)), 1fr));
     }
 
-    [data-layout|="chain"] {
+    [keen-layout|="chain"] {
         display: grid;
         grid-auto-columns: var(--kl-column-width);
         grid-auto-flow: column;
         overflow: auto;
     }
 
-    [data-layout|="flex"] {
+    [keen-layout|="flex"] {
         display: flex;
         overflow: auto;
     }
 
-    [data-layout|="string"] {
+    [keen-layout|="string"] {
         display: flex;
         flex-wrap: wrap;
     }
 
-    [data-layout|="flexgrid"] {
+    [keen-layout|="flexgrid"] {
         display: flex;
         flex-wrap: wrap;
 
@@ -43,28 +43,28 @@
         }
     }
 
-    [data-layout|="flow"],
-    [data-layout|="grid"],
-    [data-layout|="chain"],
-    [data-layout|="flex"],
-    [data-layout|="string"],
-    [data-layout|="flexgrid"] {
+    [keen-layout|="flow"],
+    [keen-layout|="grid"],
+    [keen-layout|="chain"],
+    [keen-layout|="flex"],
+    [keen-layout|="string"],
+    [keen-layout|="flexgrid"] {
 
-        &:where([data-layout$="-box"],
-            [data-layout$="-pack"],
-            [data-layout$="-pad"]) {
+        &:where([keen-layout$="-box"],
+            [keen-layout$="-pack"],
+            [keen-layout$="-pad"]) {
             --kl-padding: var(--KT-SIZE-M, 1lh);
         }
 
-        &:where([data-layout$="-pack"]) {
+        &:where([keen-layout$="-pack"]) {
             padding-block-start: max(0px, calc(var(--kl-padding-block-start) - max(0px, var(--kl-border-block-start-width))));
             padding-block-end: max(0px, calc(var(--kl-padding-block-end) - max(0px, var(--kl-border-block-end-width))));
             padding-inline-start: max(0px, calc(var(--kl-padding-inline-start) - max(0px, var(--kl-border-inline-start-width))));
             padding-inline-end: max(0px, calc(var(--kl-padding-inline-end) - max(0px, var(--kl-border-inline-end-width))));
         }
 
-        &:where([data-layout$="-box"],
-            [data-layout$="-pack"]) {
+        &:where([keen-layout$="-box"],
+            [keen-layout$="-pack"]) {
             --kl-border-style: solid;
         }
     }
