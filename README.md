@@ -15,7 +15,7 @@ _keen.css_ provides three core algorithms – each covering specific aspects of 
 
 - `typography`
 - `layout`
-- `paint`
+- `skin`
 
 ### How to use the design system
 
@@ -23,7 +23,7 @@ Before you create your first design system with _keen.css_, take a look at how i
 
 ```html
 <!DOCTYPE html>
-<html data-typography data-paint>
+<html data-typography keen-skin>
 <head>
     <style>
         @import url("keencss/keen.css");
@@ -42,7 +42,7 @@ Before you create your first design system with _keen.css_, take a look at how i
     <main data-typography=pagecontent>
         <article>...</article>
     </main>
-    <footer data-paint=pagefooter data-layout=grid-pad>
+    <footer keen-skin=pagefooter data-layout=grid-pad>
         <section>...</section>
         <section>...</section>
     </footer>

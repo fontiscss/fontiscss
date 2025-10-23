@@ -16,8 +16,8 @@
 @layer keen.typography.lib;
 @layer keen.layout.core;
 @layer keen.layout.lib;
-@layer keen.paint.core;
-@layer keen.paint.lib;
+@layer keen.skin.core;
+@layer keen.skin.lib;
 @layer keen.postprocess;
 
 @layer keen {
@@ -360,8 +360,8 @@
         }
     }
 
-    @layer paint.core {
-        [data-paint] {
+    @layer skin.core {
+        [keen-skin] {
             --kp-text-color: CanvasText;
             --kp-text-decoration-color: currentcolor;
             --kp-background-color: Canvas;
