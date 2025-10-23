@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /*!
- * ⛲ fontis.css 
+ * keen.css 
  *
  * The Algorithmic CSS Framework
  *
@@ -9,17 +9,17 @@
  * @license MIT License
  */
 
-@layer fontis.layout.lib {
+@layer keen.layout.lib {
 
     [data-layout|="grid"] {
-        --fl-column-count: auto-fit;
+        --kl-column-count: auto-fit;
         display: grid;
-        grid-template-columns: repeat(var(--fl-column-count), minmax(min(100%, var(--fl-column-width)), 1fr));
+        grid-template-columns: repeat(var(--kl-column-count), minmax(min(100%, var(--kl-column-width)), 1fr));
     }
 
     [data-layout|="chain"] {
         display: grid;
-        grid-auto-columns: var(--fl-column-width);
+        grid-auto-columns: var(--kl-column-width);
         grid-auto-flow: column;
         overflow: auto;
     }
@@ -53,19 +53,19 @@
         &:where([data-layout$="-box"],
             [data-layout$="-pack"],
             [data-layout$="-pad"]) {
-            --fl-padding: var(--FT-SIZE-M, 1lh);
+            --kl-padding: var(--KT-SIZE-M, 1lh);
         }
 
         &:where([data-layout$="-pack"]) {
-            padding-block-start: max(0px, calc(var(--fl-padding-block-start) - max(0px, var(--fl-border-block-start-width))));
-            padding-block-end: max(0px, calc(var(--fl-padding-block-end) - max(0px, var(--fl-border-block-end-width))));
-            padding-inline-start: max(0px, calc(var(--fl-padding-inline-start) - max(0px, var(--fl-border-inline-start-width))));
-            padding-inline-end: max(0px, calc(var(--fl-padding-inline-end) - max(0px, var(--fl-border-inline-end-width))));
+            padding-block-start: max(0px, calc(var(--kl-padding-block-start) - max(0px, var(--kl-border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--kl-padding-block-end) - max(0px, var(--kl-border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--kl-padding-inline-start) - max(0px, var(--kl-border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--kl-padding-inline-end) - max(0px, var(--kl-border-inline-end-width))));
         }
 
         &:where([data-layout$="-box"],
             [data-layout$="-pack"]) {
-            --fl-border-style: solid;
+            --kl-border-style: solid;
         }
     }
 }
