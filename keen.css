@@ -22,7 +22,7 @@
 
 @layer keen {
     @layer container.core {
-        [data-container] {
+        [keen-container] {
             --kc-container-name: initial;
             container-type: inline-size;
             container-name: keen var(--kc-container-name, );
