@@ -12,8 +12,8 @@
 @layer keen.bootstrap;
 @layer keen.container.core;
 @layer keen.container.lib;
-@layer keen.typography.core;
-@layer keen.typography.lib;
+@layer keen.type.core;
+@layer keen.type.lib;
 @layer keen.layout.core;
 @layer keen.layout.lib;
 @layer keen.skin.core;
@@ -30,15 +30,15 @@
         }
     }
 
-    @layer typography.core {
+    @layer type.core {
 
         /**
          *
-         * @yield em     --KT-SLH                   "scope lh" A calculated unit that refers to the base line height of the typography scope.
+         * @yield em     --KT-SLH                   "scope lh" A calculated unit that refers to the base line height of the type scope.
          * @yield number --KT-SCALE-{XS-XXXXXL}     Scaling steps
          * @yield em     --KT-SIZE-{XS-XXXXXL}      Scaling of --KT-SLH
          */
-        [data-typography] {
+        [keen-type] {
             --kt-font-family: system-ui, sans-serif;
             --kt-font-size-base: 1rem;
             --kt-letter-spacing: normal;

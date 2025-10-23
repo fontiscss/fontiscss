@@ -13,7 +13,7 @@ _keen.css_ is the first CSS framework of its kind. It  does not offer a concrete
 
 _keen.css_ provides three core algorithms – each covering specific aspects of design:
 
-- `typography`
+- `type`
 - `layout`
 - `skin`
 
@@ -23,7 +23,7 @@ Before you create your first design system with _keen.css_, take a look at how i
 
 ```html
 <!DOCTYPE html>
-<html data-typography keen-skin>
+<html keen-type keen-skin>
 <head>
     <style>
         @import url("keencss/keen.css");
@@ -39,7 +39,7 @@ Before you create your first design system with _keen.css_, take a look at how i
             ...
         </ul>
     </nav>
-    <main data-typography=pagecontent>
+    <main keen-type=pagecontent>
         <article>...</article>
     </main>
     <footer keen-skin=pagefooter data-layout=grid-pad>
@@ -72,13 +72,13 @@ _keen.css_ declares [cascade layers](https://developer.mozilla.org/en-US/docs/We
 
 #### Customize a core algorithm
 
-To customize a base algorithm, **hook into the corresponding `core` layer**. In this example, the typography algorithm is adjusted:
+To customize a base algorithm, **hook into the corresponding `core` layer**. In this example, the type algorithm is adjusted:
 
 ```css
 /* my-style/extends-keen.css */
 
-@layer keen.typography.core {
-    [data-typography] {
+@layer keen.type.core {
+    [keen-type] {
         --kt-font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
         --kt-scale-ratio: 1.25;
     }
@@ -92,8 +92,8 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 ```css
 /* my-style/extends-keen.css */
 
-@layer keen.typography.lib {
-    [data-typography|="pagecontent"] {
+@layer keen.type.lib {
+    [keen-type|="pagecontent"] {
         --kt-font-size-base: calc(1em * var(--KT-SCALE-L));
         --kt-heading-font-family: serif;
         --kt-heading-5-font-family: inherit;
