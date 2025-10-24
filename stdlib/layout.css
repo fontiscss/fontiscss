@@ -9,7 +9,7 @@
 
 @layer keen.layout.lib {
     [keen-layout|="flow"] > * + * {
-        margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
+        margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
     }
 
     [keen-layout|="grid"] {
@@ -54,7 +54,7 @@
         &:where([keen-layout$="-box"],
             [keen-layout$="-pack"],
             [keen-layout$="-pad"]) {
-            --keen-layout--padding: var(--KEEN-TYPE--SIZE-M, 1lh);
+            --keen-layout--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
         }
 
         &:where([keen-layout$="-pack"]) {

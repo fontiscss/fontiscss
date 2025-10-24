@@ -307,7 +307,7 @@
 
             --keen-layout--column-width: 18ch;
             --keen-layout--column-count: auto;
-            --keen-layout--gap: var(--KEEN-TYPE--SIZE-M, 1lh);
+            --keen-layout--gap: var(--KEEN-TYPE--SIZE-M, 1rlh);
             --keen-layout--column-gap: var(--keen-layout--gap);
             --keen-layout--row-gap: var(--keen-layout--gap);
 
@@ -336,7 +336,7 @@
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
+                margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -354,7 +354,7 @@
         }
 
         [keen-layout=""] > * + * {
-            margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
+            margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
         }
     }
 
