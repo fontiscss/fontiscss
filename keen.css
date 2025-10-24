@@ -336,7 +336,7 @@
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M), 1lh));
+                margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -354,7 +354,7 @@
         }
 
         [keen-layout|="flow"] > * + * {
-            margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M), 1lh));
+            margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
         }
     }
 
