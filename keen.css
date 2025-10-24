@@ -288,7 +288,6 @@
 
     @layer layout.core {
         [keen-layout] {
-            --keen-layout--flow-space: initial;
             --keen-layout--border-style: none;
             --keen-layout--border-block-start-style: var(--keen-layout--border-style);
             --keen-layout--border-block-end-style: var(--keen-layout--border-style);
@@ -330,7 +329,6 @@
             padding-inline-start: var(--keen-layout--padding-inline-start);
             padding-inline-end: var(--keen-layout--padding-inline-end);
             max-inline-size: var(--keen-type--max-inline-size);
-            --_keen-layout--flow-space: var(--keen-layout--flow-space);
 
             * {
                 margin: 0;
