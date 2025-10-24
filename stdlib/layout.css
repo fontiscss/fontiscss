@@ -12,14 +12,14 @@
 @layer keen.layout.lib {
 
     [keen-layout|="grid"] {
-        --kl-column-count: auto-fit;
+        --keen-layout--column-count: auto-fit;
         display: grid;
-        grid-template-columns: repeat(var(--kl-column-count), minmax(min(100%, var(--kl-column-width)), 1fr));
+        grid-template-columns: repeat(var(--keen-layout--column-count), minmax(min(100%, var(--keen-layout--column-width)), 1fr));
     }
 
     [keen-layout|="chain"] {
         display: grid;
-        grid-auto-columns: var(--kl-column-width);
+        grid-auto-columns: var(--keen-layout--column-width);
         grid-auto-flow: column;
         overflow: auto;
     }
@@ -53,19 +53,19 @@
         &:where([keen-layout$="-box"],
             [keen-layout$="-pack"],
             [keen-layout$="-pad"]) {
-            --kl-padding: var(--KT-SIZE-M, 1lh);
+            --keen-layout--padding: var(--KEEN-TYPE--SIZE-M, 1lh);
         }
 
         &:where([keen-layout$="-pack"]) {
-            padding-block-start: max(0px, calc(var(--kl-padding-block-start) - max(0px, var(--kl-border-block-start-width))));
-            padding-block-end: max(0px, calc(var(--kl-padding-block-end) - max(0px, var(--kl-border-block-end-width))));
-            padding-inline-start: max(0px, calc(var(--kl-padding-inline-start) - max(0px, var(--kl-border-inline-start-width))));
-            padding-inline-end: max(0px, calc(var(--kl-padding-inline-end) - max(0px, var(--kl-border-inline-end-width))));
+            padding-block-start: max(0px, calc(var(--keen-layout--padding-block-start) - max(0px, var(--keen-layout--border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--keen-layout--padding-block-end) - max(0px, var(--keen-layout--border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--keen-layout--padding-inline-start) - max(0px, var(--keen-layout--border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--keen-layout--padding-inline-end) - max(0px, var(--keen-layout--border-inline-end-width))));
         }
 
         &:where([keen-layout$="-box"],
             [keen-layout$="-pack"]) {
-            --kl-border-style: solid;
+            --keen-layout--border-style: solid;
         }
     }
 }

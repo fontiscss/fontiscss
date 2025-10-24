@@ -23,9 +23,9 @@
 @layer keen {
     @layer container.core {
         [keen-container] {
-            --kc-container-name: initial;
+            --keen-container--container-name: initial;
             container-type: inline-size;
-            container-name: keen var(--kc-container-name, );
+            container-name: keen var(--keen-container--container-name, );
             display: block;
         }
     }
@@ -34,226 +34,226 @@
 
         /**
          *
-         * @yield em     --KT-SLH                   "scope lh" A calculated unit that refers to the base line height of the type scope.
-         * @yield number --KT-SCALE-{XS-XXXXXL}     Scaling steps
-         * @yield em     --KT-SIZE-{XS-XXXXXL}      Scaling of --KT-SLH
+         * @yield em     --KEEN-TYPE--SLH                   "scope lh" A calculated unit that refers to the base line height of the type scope.
+         * @yield number --KEEN-TYPE--SCALE-{XS-XXXXXL}     Scaling steps
+         * @yield em     --KEEN-TYPE--SIZE-{XS-XXXXXL}      Scaling of --KEEN-TYPE--SLH
          */
         [keen-type] {
-            --kt-font-family: system-ui, sans-serif;
-            --kt-font-size-base: 1rem;
-            --kt-letter-spacing: normal;
-            --kt-line-height: 1.5;
-            --kt-scale-ratio: 1.2;
-            --kt-text-align: start;
-            --kt-text-transform: none;
-            --kt-text-underline-offset: auto;
+            --keen-type--font-family: system-ui, sans-serif;
+            --keen-type--font-size-base: 1rem;
+            --keen-type--letter-spacing: normal;
+            --keen-type--line-height: 1.5;
+            --keen-type--scale-ratio: 1.2;
+            --keen-type--text-align: start;
+            --keen-type--text-transform: none;
+            --keen-type--text-underline-offset: auto;
 
-            --kt-heading-font-family: inherit;
-            --kt-heading-1-font-family: var(--kt-heading-font-family);
-            --kt-heading-2-font-family: var(--kt-heading-font-family);
-            --kt-heading-3-font-family: var(--kt-heading-font-family);
-            --kt-heading-4-font-family: var(--kt-heading-font-family);
-            --kt-heading-5-font-family: var(--kt-heading-font-family);
-            --kt-heading-6-font-family: var(--kt-heading-font-family);
-            --kt-heading-font-weight: bolder;
-            --kt-heading-1-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-2-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-3-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-4-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-5-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-6-font-weight: var(--kt-heading-font-weight);
-            --kt-heading-1-font-scale: var(--KT-SCALE-XXXL);
-            --kt-heading-2-font-scale: var(--KT-SCALE-XXL);
-            --kt-heading-3-font-scale: var(--KT-SCALE-XL);
-            --kt-heading-4-font-scale: var(--KT-SCALE-L);
-            --kt-heading-5-font-scale: var(--KT-SCALE-M);
-            --kt-heading-6-font-scale: var(--KT-SCALE-S);
-            --kt-heading-1-line-height: 1.3;
-            --kt-heading-2-line-height: 1.4;
-            --kt-heading-3-line-height: 1.5;
-            --kt-heading-4-line-height: 1.5;
-            --kt-heading-5-line-height: 1.5;
-            --kt-heading-6-line-height: 1.5;
-            --kt-heading-text-align: inherit;
-            --kt-heading-1-text-align: var(--kt-heading-text-align);
-            --kt-heading-2-text-align: var(--kt-heading-text-align);
-            --kt-heading-3-text-align: var(--kt-heading-text-align);
-            --kt-heading-4-text-align: var(--kt-heading-text-align);
-            --kt-heading-5-text-align: var(--kt-heading-text-align);
-            --kt-heading-6-text-align: var(--kt-heading-text-align);
-            --kt-heading-text-transform: none;
-            --kt-heading-1-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-2-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-3-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-4-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-5-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-6-text-transform: var(--kt-heading-text-transform);
-            --kt-heading-text-underline-offset: var(--kt-text-underline-offset);
-            --kt-heading-1-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-2-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-3-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-4-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-5-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-6-text-underline-offset: var(--kt-heading-text-underline-offset);
-            --kt-heading-letter-spacing: normal;
-            --kt-heading-1-letter-spacing: var(--kt-heading-letter-spacing);
-            --kt-heading-2-letter-spacing: var(--kt-heading-letter-spacing);
-            --kt-heading-3-letter-spacing: var(--kt-heading-letter-spacing);
-            --kt-heading-4-letter-spacing: var(--kt-heading-letter-spacing);
-            --kt-heading-5-letter-spacing: var(--kt-heading-letter-spacing);
-            --kt-heading-6-letter-spacing: var(--kt-heading-letter-spacing);
+            --keen-type-heading--font-family: inherit;
+            --keen-type-heading-1--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading-2--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading-3--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading-4--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading-5--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading-6--font-family: var(--keen-type-heading--font-family);
+            --keen-type-heading--font-weight: bolder;
+            --keen-type-heading-1--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-2--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-3--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-4--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-5--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-6--font-weight: var(--keen-type-heading--font-weight);
+            --keen-type-heading-1--font-scale: var(--KEEN-TYPE--SCALE-XXXL);
+            --keen-type-heading-2--font-scale: var(--KEEN-TYPE--SCALE-XXL);
+            --keen-type-heading-3--font-scale: var(--KEEN-TYPE--SCALE-XL);
+            --keen-type-heading-4--font-scale: var(--KEEN-TYPE--SCALE-L);
+            --keen-type-heading-5--font-scale: var(--KEEN-TYPE--SCALE-M);
+            --keen-type-heading-6--font-scale: var(--KEEN-TYPE--SCALE-S);
+            --keen-type-heading-1--line-height: 1.3;
+            --keen-type-heading-2--line-height: 1.4;
+            --keen-type-heading-3--line-height: 1.5;
+            --keen-type-heading-4--line-height: 1.5;
+            --keen-type-heading-5--line-height: 1.5;
+            --keen-type-heading-6--line-height: 1.5;
+            --keen-type-heading--text-align: inherit;
+            --keen-type-heading-1--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading-2--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading-3--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading-4--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading-5--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading-6--text-align: var(--keen-type-heading--text-align);
+            --keen-type-heading--text-transform: none;
+            --keen-type-heading-1--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading-2--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading-3--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading-4--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading-5--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading-6--text-transform: var(--keen-type-heading--text-transform);
+            --keen-type-heading--text-underline-offset: var(--keen-type--text-underline-offset);
+            --keen-type-heading-1--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading-2--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading-3--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading-4--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading-5--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading-6--text-underline-offset: var(--keen-type-heading--text-underline-offset);
+            --keen-type-heading--letter-spacing: normal;
+            --keen-type-heading-1--letter-spacing: var(--keen-type-heading--letter-spacing);
+            --keen-type-heading-2--letter-spacing: var(--keen-type-heading--letter-spacing);
+            --keen-type-heading-3--letter-spacing: var(--keen-type-heading--letter-spacing);
+            --keen-type-heading-4--letter-spacing: var(--keen-type-heading--letter-spacing);
+            --keen-type-heading-5--letter-spacing: var(--keen-type-heading--letter-spacing);
+            --keen-type-heading-6--letter-spacing: var(--keen-type-heading--letter-spacing);
 
-            --kt-link-text-decoration-line: underline;
-            --kt-link-visited-text-decoration-line: var(--kt-link-text-decoration-line);
-            --kt-link-text-decoration-thickness: from-font;
-            --kt-link-visited-text-decoration-thickness: var(--kt-link-text-decoration-thickness);
+            --keen-type--link-text-decoration-line: underline;
+            --keen-type--link-visited-text-decoration-line: var(--keen-type--link-text-decoration-line);
+            --keen-type--link-text-decoration-thickness: from-font;
+            --keen-type--link-visited-text-decoration-thickness: var(--keen-type--link-text-decoration-thickness);
 
-            --kt-small-font-scale: var(--KT-SCALE-S);
+            --keen-type--small-font-scale: var(--KEEN-TYPE--SCALE-S);
 
             /* # scaling */
 
-            --KT-SCALE-XS: calc(var(--KT-SCALE-S) / var(--kt-scale-ratio));
-            --KT-SCALE-S: calc(var(--KT-SCALE-M) / var(--kt-scale-ratio));
-            --KT-SCALE-M: 1;
-            --KT-SCALE-L: calc(var(--KT-SCALE-M) * var(--kt-scale-ratio));
-            --KT-SCALE-XL: calc(var(--KT-SCALE-L) * var(--kt-scale-ratio));
-            --KT-SCALE-XXL: calc(var(--KT-SCALE-XL) * var(--kt-scale-ratio));
-            --KT-SCALE-XXXL: calc(var(--KT-SCALE-XXL) * var(--kt-scale-ratio));
-            --KT-SCALE-XXXXL: calc(var(--KT-SCALE-XXXL) * var(--kt-scale-ratio));
-            --KT-SCALE-XXXXXL: calc(var(--KT-SCALE-XXXXL) * var(--kt-scale-ratio));
+            --KEEN-TYPE--SCALE-XS: calc(var(--KEEN-TYPE--SCALE-S) / var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-S: calc(var(--KEEN-TYPE--SCALE-M) / var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-M: 1;
+            --KEEN-TYPE--SCALE-L: calc(var(--KEEN-TYPE--SCALE-M) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XL: calc(var(--KEEN-TYPE--SCALE-L) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXL: calc(var(--KEEN-TYPE--SCALE-XL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * var(--keen-type--scale-ratio));
 
             /* # font sizing */
 
-            font-size: var(--kt-font-size-base);
-            --_kt-font-scale: var(--KT-SCALE-M);
+            font-size: var(--keen-type--font-size-base);
+            --_keen-type--font-scale: var(--KEEN-TYPE--SCALE-M);
 
             & :is(h1, h2, h3, h4, h5, h6, small):where(:not(&)) {
-                font-size: calc(1em * var(--_kt-font-scale));
+                font-size: calc(1em * var(--_keen-type--font-scale));
             }
 
             & small:where(:not(&)) {
-                --_kt-font-scale: var(--kt-small-font-scale);
+                --_keen-type--font-scale: var(--keen-type--small-font-scale);
             }
 
             & h6:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-6-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-6--font-scale);
             }
 
             & h5:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-5-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-5--font-scale);
             }
 
             & h4:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-4-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-4--font-scale);
             }
 
             & h3:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-3-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-3--font-scale);
             }
 
             & h2:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-2-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-2--font-scale);
             }
 
             & h1:where(:not(&)) {
-                --_kt-font-scale: var(--kt-heading-1-font-scale);
+                --_keen-type--font-scale: var(--keen-type-heading-1--font-scale);
             }
 
             /* # scope-dependent sizes */
 
             &,
             & * {
-                --KT-SLH: calc((1em / var(--_kt-font-scale)) * var(--kt-line-height));
-                --KT-SIZE-XS: calc(var(--KT-SLH) * var(--KT-SCALE-XS));
-                --KT-SIZE-S: calc(var(--KT-SLH) * var(--KT-SCALE-S));
-                --KT-SIZE-M: calc(var(--KT-SLH) * var(--KT-SCALE-M));
-                --KT-SIZE-L: calc(var(--KT-SLH) * var(--KT-SCALE-L));
-                --KT-SIZE-XL: calc(var(--KT-SLH) * var(--KT-SCALE-XL));
-                --KT-SIZE-XXL: calc(var(--KT-SLH) * var(--KT-SCALE-XXL));
-                --KT-SIZE-XXXL: calc(var(--KT-SLH) * var(--KT-SCALE-XXXL));
-                --KT-SIZE-XXXXL: calc(var(--KT-SLH) * var(--KT-SCALE-XXXXL));
-                --KT-SIZE-XXXXXL: calc(var(--KT-SLH) * var(--KT-SCALE-XXXXXL));
+                --KEEN-TYPE--SLH: calc((1em / var(--_keen-type--font-scale)) * var(--keen-type--line-height));
+                --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XS));
+                --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-S));
+                --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-M));
+                --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-L));
+                --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XL));
+                --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXL));
+                --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXL));
+                --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXXL));
+                --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXXXL));
             }
 
             /* # font / text */
 
-            font-family: var(--kt-font-family);
-            letter-spacing: var(--kt-letter-spacing);
-            line-height: var(--kt-line-height);
-            text-align: var(--kt-text-align);
-            text-transform: var(--kt-text-transform);
-            text-underline-offset: var(--kt-text-underline-offset);
+            font-family: var(--keen-type--font-family);
+            letter-spacing: var(--keen-type--letter-spacing);
+            line-height: var(--keen-type--line-height);
+            text-align: var(--keen-type--text-align);
+            text-transform: var(--keen-type--text-transform);
+            text-underline-offset: var(--keen-type--text-underline-offset);
 
             & h6:where(:not(&)) {
-                font-family: var(--kt-heading-6-font-family);
-                font-weight: var(--kt-heading-6-font-weight);
-                letter-spacing: var(--kt-heading-6-letter-spacing);
-                line-height: var(--kt-heading-6-line-height);
-                text-align: var(--kt-heading-6-text-align);
-                text-transform: var(--kt-heading-6-text-transform);
-                text-underline-offset: var(--kt-heading-6-text-underline-offset);
+                font-family: var(--keen-type-heading-6--font-family);
+                font-weight: var(--keen-type-heading-6--font-weight);
+                letter-spacing: var(--keen-type-heading-6--letter-spacing);
+                line-height: var(--keen-type-heading-6--line-height);
+                text-align: var(--keen-type-heading-6--text-align);
+                text-transform: var(--keen-type-heading-6--text-transform);
+                text-underline-offset: var(--keen-type-heading-6--text-underline-offset);
             }
 
             & h5:where(:not(&)) {
-                font-family: var(--kt-heading-5-font-family);
-                font-weight: var(--kt-heading-5-font-weight);
-                letter-spacing: var(--kt-heading-5-letter-spacing);
-                line-height: var(--kt-heading-5-line-height);
-                text-align: var(--kt-heading-5-text-align);
-                text-transform: var(--kt-heading-5-text-transform);
-                text-underline-offset: var(--kt-heading-5-text-underline-offset);
+                font-family: var(--keen-type-heading-5--font-family);
+                font-weight: var(--keen-type-heading-5--font-weight);
+                letter-spacing: var(--keen-type-heading-5--letter-spacing);
+                line-height: var(--keen-type-heading-5--line-height);
+                text-align: var(--keen-type-heading-5--text-align);
+                text-transform: var(--keen-type-heading-5--text-transform);
+                text-underline-offset: var(--keen-type-heading-5--text-underline-offset);
             }
 
             & h4:where(:not(&)) {
-                font-family: var(--kt-heading-4-font-family);
-                font-weight: var(--kt-heading-4-font-weight);
-                letter-spacing: var(--kt-heading-4-letter-spacing);
-                line-height: var(--kt-heading-4-line-height);
-                text-align: var(--kt-heading-4-text-align);
-                text-transform: var(--kt-heading-4-text-transform);
-                text-underline-offset: var(--kt-heading-4-text-underline-offset);
+                font-family: var(--keen-type-heading-4--font-family);
+                font-weight: var(--keen-type-heading-4--font-weight);
+                letter-spacing: var(--keen-type-heading-4--letter-spacing);
+                line-height: var(--keen-type-heading-4--line-height);
+                text-align: var(--keen-type-heading-4--text-align);
+                text-transform: var(--keen-type-heading-4--text-transform);
+                text-underline-offset: var(--keen-type-heading-4--text-underline-offset);
             }
 
             & h3:where(:not(&)) {
-                font-family: var(--kt-heading-3-font-family);
-                font-weight: var(--kt-heading-3-font-weight);
-                letter-spacing: var(--kt-heading-3-letter-spacing);
-                line-height: var(--kt-heading-3-line-height);
-                text-align: var(--kt-heading-3-text-align);
-                text-transform: var(--kt-heading-3-text-transform);
-                text-underline-offset: var(--kt-heading-3-text-underline-offset);
+                font-family: var(--keen-type-heading-3--font-family);
+                font-weight: var(--keen-type-heading-3--font-weight);
+                letter-spacing: var(--keen-type-heading-3--letter-spacing);
+                line-height: var(--keen-type-heading-3--line-height);
+                text-align: var(--keen-type-heading-3--text-align);
+                text-transform: var(--keen-type-heading-3--text-transform);
+                text-underline-offset: var(--keen-type-heading-3--text-underline-offset);
             }
 
             & h2:where(:not(&)) {
-                font-family: var(--kt-heading-2-font-family);
-                font-weight: var(--kt-heading-2-font-weight);
-                letter-spacing: var(--kt-heading-2-letter-spacing);
-                line-height: var(--kt-heading-2-line-height);
-                text-align: var(--kt-heading-2-text-align);
-                text-transform: var(--kt-heading-2-text-transform);
-                text-underline-offset: var(--kt-heading-2-text-underline-offset);
+                font-family: var(--keen-type-heading-2--font-family);
+                font-weight: var(--keen-type-heading-2--font-weight);
+                letter-spacing: var(--keen-type-heading-2--letter-spacing);
+                line-height: var(--keen-type-heading-2--line-height);
+                text-align: var(--keen-type-heading-2--text-align);
+                text-transform: var(--keen-type-heading-2--text-transform);
+                text-underline-offset: var(--keen-type-heading-2--text-underline-offset);
             }
 
             & h1:where(:not(&)) {
-                font-family: var(--kt-heading-1-font-family);
-                font-weight: var(--kt-heading-1-font-weight);
-                letter-spacing: var(--kt-heading-1-letter-spacing);
-                line-height: var(--kt-heading-1-line-height);
-                text-align: var(--kt-heading-1-text-align);
-                text-transform: var(--kt-heading-1-text-transform);
-                text-underline-offset: var(--kt-heading-1-text-underline-offset);
+                font-family: var(--keen-type-heading-1--font-family);
+                font-weight: var(--keen-type-heading-1--font-weight);
+                letter-spacing: var(--keen-type-heading-1--letter-spacing);
+                line-height: var(--keen-type-heading-1--line-height);
+                text-align: var(--keen-type-heading-1--text-align);
+                text-transform: var(--keen-type-heading-1--text-transform);
+                text-underline-offset: var(--keen-type-heading-1--text-underline-offset);
             }
 
             /* # link */
 
             & a:where(:not(&)):link {
-                text-decoration-line: var(--kt-link-text-decoration-line);
-                text-decoration-thickness: var(--kt-link-text-decoration-thickness);
+                text-decoration-line: var(--keen-type--link-text-decoration-line);
+                text-decoration-thickness: var(--keen-type--link-text-decoration-thickness);
             }
 
             & a:where(:not(&)):visited {
-                text-decoration-line: var(--kt-link-visited-text-decoration-line);
-                text-decoration-thickness: var(--kt-link-visited-text-decoration-thickness);
+                text-decoration-line: var(--keen-type--link-visited-text-decoration-line);
+                text-decoration-thickness: var(--keen-type--link-visited-text-decoration-thickness);
             }
 
             /* # adjustment */
@@ -270,8 +270,8 @@
 
             & :is(h1, h2, h3, h4, h5, h6) {
                 margin: 0;
-                margin-block-start: max(var(--KT-SIZE-M), 1lh);
-                margin-block-end: var(--KT-SIZE-M);
+                margin-block-start: max(var(--KEEN-TYPE--SIZE-M), 1lh);
+                margin-block-end: var(--KEEN-TYPE--SIZE-M);
             }
 
             & img {
@@ -290,55 +290,55 @@
 
     @layer layout.core {
         [keen-layout] {
-            --kl-border-style: none;
-            --kl-border-block-start-style: var(--kl-border-style);
-            --kl-border-block-end-style: var(--kl-border-style);
-            --kl-border-inline-start-style: var(--kl-border-style);
-            --kl-border-inline-end-style: var(--kl-border-style);
-            --kl-border-width: 3px;
-            --kl-border-block-start-width: var(--kl-border-width);
-            --kl-border-block-end-width: var(--kl-border-width);
-            --kl-border-inline-start-width: var(--kl-border-width);
-            --kl-border-inline-end-width: var(--kl-border-width);
-            --kl-padding: 0;
-            --kl-padding-block-start: var(--kl-padding);
-            --kl-padding-block-end: var(--kl-padding);
-            --kl-padding-inline-start: var(--kl-padding);
-            --kl-padding-inline-end: var(--kl-padding);
-            --kt-max-inline-size: none;
+            --keen-layout--border-style: none;
+            --keen-layout--border-block-start-style: var(--keen-layout--border-style);
+            --keen-layout--border-block-end-style: var(--keen-layout--border-style);
+            --keen-layout--border-inline-start-style: var(--keen-layout--border-style);
+            --keen-layout--border-inline-end-style: var(--keen-layout--border-style);
+            --keen-layout--border-width: 3px;
+            --keen-layout--border-block-start-width: var(--keen-layout--border-width);
+            --keen-layout--border-block-end-width: var(--keen-layout--border-width);
+            --keen-layout--border-inline-start-width: var(--keen-layout--border-width);
+            --keen-layout--border-inline-end-width: var(--keen-layout--border-width);
+            --keen-layout--padding: 0;
+            --keen-layout--padding-block-start: var(--keen-layout--padding);
+            --keen-layout--padding-block-end: var(--keen-layout--padding);
+            --keen-layout--padding-inline-start: var(--keen-layout--padding);
+            --keen-layout--padding-inline-end: var(--keen-layout--padding);
+            --keen-type--max-inline-size: none;
 
-            --kl-column-width: 18ch;
-            --kl-column-count: auto;
-            --kl-gap: var(--KT-SIZE-M, 1lh);
-            --kl-column-gap: var(--kl-gap);
-            --kl-row-gap: var(--kl-gap);
+            --keen-layout--column-width: 18ch;
+            --keen-layout--column-count: auto;
+            --keen-layout--gap: var(--KEEN-TYPE--SIZE-M, 1lh);
+            --keen-layout--column-gap: var(--keen-layout--gap);
+            --keen-layout--row-gap: var(--keen-layout--gap);
 
             display: block;
             list-style-type: '';
-            column-gap: var(--kl-column-gap);
-            row-gap: var(--kl-row-gap);
+            column-gap: var(--keen-layout--column-gap);
+            row-gap: var(--keen-layout--row-gap);
 
-            border-block-start-style: var(--kl-border-block-start-style);
-            border-block-end-style: var(--kl-border-block-end-style);
-            border-inline-start-style: var(--kl-border-inline-start-style);
-            border-inline-end-style: var(--kl-border-inline-end-style);
-            border-block-start-width: var(--kl-border-block-start-width);
-            border-block-end-width: var(--kl-border-block-end-width);
-            border-inline-start-width: var(--kl-border-inline-start-width);
-            border-inline-end-width: var(--kl-border-inline-end-width);
-            padding-block-start: var(--kl-padding-block-start);
-            padding-block-end: var(--kl-padding-block-end);
-            padding-inline-start: var(--kl-padding-inline-start);
-            padding-inline-end: var(--kl-padding-inline-end);
-            max-inline-size: var(--kt-max-inline-size);
+            border-block-start-style: var(--keen-layout--border-block-start-style);
+            border-block-end-style: var(--keen-layout--border-block-end-style);
+            border-inline-start-style: var(--keen-layout--border-inline-start-style);
+            border-inline-end-style: var(--keen-layout--border-inline-end-style);
+            border-block-start-width: var(--keen-layout--border-block-start-width);
+            border-block-end-width: var(--keen-layout--border-block-end-width);
+            border-inline-start-width: var(--keen-layout--border-inline-start-width);
+            border-inline-end-width: var(--keen-layout--border-inline-end-width);
+            padding-block-start: var(--keen-layout--padding-block-start);
+            padding-block-end: var(--keen-layout--padding-block-end);
+            padding-inline-start: var(--keen-layout--padding-inline-start);
+            padding-inline-end: var(--keen-layout--padding-inline-end);
+            max-inline-size: var(--keen-type--max-inline-size);
 
             * {
                 margin: 0;
-                --kl-flow-space: initial;
+                --keen-layout--flow-space: initial;
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--kl-flow-space, max(var(--KT-SIZE-M), 1lh));
+                margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M), 1lh));
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -356,79 +356,79 @@
         }
 
         [keen-layout|="flow"] > * + * {
-            margin-block-start: var(--kl-flow-space, max(var(--KT-SIZE-M), 1lh));
+            margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M), 1lh));
         }
     }
 
     @layer skin.core {
         [keen-skin] {
-            --kp-text-color: CanvasText;
-            --kp-text-decoration-color: currentcolor;
-            --kp-background-color: Canvas;
-            --kp-border-color: currentcolor;
-            --kp-border-block-start-color: var(--kp-border-color);
-            --kp-border-block-end-color: var(--kp-border-color);
-            --kp-border-inline-start-color: var(--kp-border-color);
-            --kp-border-inline-end-color: var(--kp-border-color);
-            --kp-heading-text-color: currentcolor;
-            --kp-heading-1-text-color: var(--kp-heading-text-color);
-            --kp-heading-2-text-color: var(--kp-heading-text-color);
-            --kp-heading-3-text-color: var(--kp-heading-text-color);
-            --kp-heading-4-text-color: var(--kp-heading-text-color);
-            --kp-heading-5-text-color: var(--kp-heading-text-color);
-            --kp-heading-6-text-color: var(--kp-heading-text-color);
-            --kp-link-text-color: LinkText;
-            --kp-link-visited-text-color: VisitedText;
-            --kp-link-active-text-color: ActiveText;
-            --kp-link-text-decoration-color: currentcolor;
-            --kp-link-visited-text-decoration-color: currentcolor;
-            --kp-link-active-text-decoration-color: currentcolor;
+            --keen-skin--text-color: CanvasText;
+            --keen-skin--text-decoration-color: currentcolor;
+            --keen-skin--background-color: Canvas;
+            --keen-skin--border-color: currentcolor;
+            --keen-skin--border-block-start-color: var(--keen-skin--border-color);
+            --keen-skin--border-block-end-color: var(--keen-skin--border-color);
+            --keen-skin--border-inline-start-color: var(--keen-skin--border-color);
+            --keen-skin--border-inline-end-color: var(--keen-skin--border-color);
+            --keen-skin-heading--text-color: currentcolor;
+            --keen-skin-heading-1--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-heading-2--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-heading-3--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-heading-4--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-heading-5--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-heading-6--text-color: var(--keen-skin-heading--text-color);
+            --keen-skin-link--text-color: LinkText;
+            --keen-skin-link-visited--text-color: VisitedText;
+            --keen-skin-link-active--text-color: ActiveText;
+            --keen-skin-link--text-decoration-color: currentcolor;
+            --keen-skin-link-visited--text-decoration-color: currentcolor;
+            --keen-skin-link-active--text-decoration-color: currentcolor;
 
-            color: var(--kp-text-color);
-            background-color: var(--kp-background-color);
-            border-block-start-color: var(--kp-border-block-start-color);
-            border-block-end-color: var(--kp-border-block-end-color);
-            border-inline-start-color: var(--kp-border-inline-start-color);
-            border-inline-end-color: var(--kp-border-inline-end-color);
-            text-decoration-color: var(--kp-text-decoration-color);
+            color: var(--keen-skin--text-color);
+            background-color: var(--keen-skin--background-color);
+            border-block-start-color: var(--keen-skin--border-block-start-color);
+            border-block-end-color: var(--keen-skin--border-block-end-color);
+            border-inline-start-color: var(--keen-skin--border-inline-start-color);
+            border-inline-end-color: var(--keen-skin--border-inline-end-color);
+            text-decoration-color: var(--keen-skin--text-decoration-color);
 
             & h6:where(:not(&)) {
-                color: var(--kp-heading-6-text-color);
+                color: var(--keen-skin-heading-6--text-color);
             }
 
             & h5:where(:not(&)) {
-                color: var(--kp-heading-5-text-color);
+                color: var(--keen-skin-heading-5--text-color);
             }
 
             & h4:where(:not(&)) {
-                color: var(--kp-heading-4-text-color);
+                color: var(--keen-skin-heading-4--text-color);
             }
 
             & h3:where(:not(&)) {
-                color: var(--kp-heading-3-text-color);
+                color: var(--keen-skin-heading-3--text-color);
             }
 
             & h2:where(:not(&)) {
-                color: var(--kp-heading-2-text-color);
+                color: var(--keen-skin-heading-2--text-color);
             }
 
             & h1:where(:not(&)) {
-                color: var(--kp-heading-1-text-color);
+                color: var(--keen-skin-heading-1--text-color);
             }
 
             & a:where(:not(&)):link {
-                color: var(--kp-link-text-color);
-                text-decoration-color: var(--kp-link-text-decoration-color);
+                color: var(--keen-skin-link--text-color);
+                text-decoration-color: var(--keen-skin-link--text-decoration-color);
             }
 
             & a:where(:not(&)):visited {
-                color: var(--kp-link-visited-text-color);
-                text-decoration-color: var(--kp-link-visited-text-decoration-color);
+                color: var(--keen-skin-link-visited--text-color);
+                text-decoration-color: var(--keen-skin-link-visited--text-decoration-color);
             }
 
             & a:where(:not(&)):any-link:active {
-                color: var(--kp-link-active-text-color);
-                text-decoration-color: var(--kp-link-active-text-decoration-color);
+                color: var(--keen-skin-link-active--text-color);
+                text-decoration-color: var(--keen-skin-link-active--text-decoration-color);
             }
         }
     }

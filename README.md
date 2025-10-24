@@ -79,8 +79,8 @@ To customize a base algorithm, **hook into the corresponding `core` layer**. In 
 
 @layer keen.type.core {
     [keen-type] {
-        --kt-font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
-        --kt-scale-ratio: 1.25;
+        --keen-type--font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
+        --keen-type--scale-ratio: 1.25;
     }
 }
 ```
@@ -94,10 +94,10 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 
 @layer keen.type.lib {
     [keen-type|="pagecontent"] {
-        --kt-font-size-base: calc(1em * var(--KT-SCALE-L));
-        --kt-heading-font-family: serif;
-        --kt-heading-5-font-family: inherit;
-        --kt-heading-6-font-family: inherit;
+        --keen-type--font-size-base: calc(1em * var(--KEEN-TYPE--SCALE-L));
+        --keen-type-heading--font-family: serif;
+        --keen-type-heading-5--font-family: inherit;
+        --keen-type-heading-6--font-family: inherit;
     }
 }
 ```
