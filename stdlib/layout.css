@@ -8,6 +8,9 @@
  */
 
 @layer keen.layout.lib {
+    [keen-layout|="flow"] > * + * {
+        margin-block-start: var(--keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1lh), 1lh));
+    }
 
     [keen-layout|="grid"] {
         --keen-layout--column-count: auto-fit;
