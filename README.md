@@ -14,7 +14,7 @@ _keen.css_ is the first CSS framework of its kind. It  does not offer a concrete
 _keen.css_ provides three core algorithms – each covering specific aspects of design:
 
 - `type`
-- `layout`
+- `grid`
 - `skin`
 
 ### How to use the design system
@@ -28,21 +28,21 @@ Before you create your first design system with _keen.css_, take a look at how i
     <style>
         @import url("keencss/keen.css");
         /* Your unique design: */
-        @import url("keencss/stdlib/layout.css");
+        @import url("keencss/stdlib/grid.css");
         @import url("my-style/extends-keen.css");
     </style>
 </head>
 <body>
     <header>...</header>
     <nav>
-        <ul keen-layout=flex>
+        <ul keen-grid=flex>
             ...
         </ul>
     </nav>
     <main keen-type=pagecontent>
         <article>...</article>
     </main>
-    <footer keen-skin=pagefooter keen-layout=grid-pad>
+    <footer keen-skin=pagefooter keen-grid=grid-pad>
         <section>...</section>
         <section>...</section>
     </footer>
@@ -106,13 +106,13 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 
 The core of _keen.css_ is reduced to the essentials. This gives you a stable foundation and complete freedom for your ideas. But maybe you want to **skip all the construction work** and concentrate on your outstanding design features. In this case, the standard library offers you **a growing collection of algorithms** that you can easily adopt.
 
-Copy or import the building blocks that fit into your design system idea. For example, a **responsive layout system**:
+Copy or import the building blocks that fit into your design system idea. For example, a **responsive grid system**:
 
 ```css
 @import url("keencss/keen.css");
 
 /* Your selection from the Standard Library */
-@import url("keencss/stdlib/layout.css");
+@import url("keencss/stdlib/grid.css");
 
 /* Your own code here. */
 ```

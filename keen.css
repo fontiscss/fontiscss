@@ -12,8 +12,8 @@
 @layer keen.container.lib;
 @layer keen.type.core;
 @layer keen.type.lib;
-@layer keen.layout.core;
-@layer keen.layout.lib;
+@layer keen.grid.core;
+@layer keen.grid.lib;
 @layer keen.skin.core;
 @layer keen.skin.lib;
 @layer keen.postprocess;
@@ -264,7 +264,7 @@
                 text-wrap: balance;
             }
 
-            /* # default layout if no layout algorithm is available */
+            /* # default grid if no grid algorithm is available */
 
             & :is(h1, h2, h3, h4, h5, h6) {
                 margin: 0;
@@ -286,57 +286,57 @@
         }
     }
 
-    @layer layout.core {
-        [keen-layout] {
-            --keen-layout--border-style: none;
-            --keen-layout--border-block-start-style: var(--keen-layout--border-style);
-            --keen-layout--border-block-end-style: var(--keen-layout--border-style);
-            --keen-layout--border-inline-start-style: var(--keen-layout--border-style);
-            --keen-layout--border-inline-end-style: var(--keen-layout--border-style);
-            --keen-layout--border-width: 3px;
-            --keen-layout--border-block-start-width: var(--keen-layout--border-width);
-            --keen-layout--border-block-end-width: var(--keen-layout--border-width);
-            --keen-layout--border-inline-start-width: var(--keen-layout--border-width);
-            --keen-layout--border-inline-end-width: var(--keen-layout--border-width);
-            --keen-layout--padding: 0;
-            --keen-layout--padding-block-start: var(--keen-layout--padding);
-            --keen-layout--padding-block-end: var(--keen-layout--padding);
-            --keen-layout--padding-inline-start: var(--keen-layout--padding);
-            --keen-layout--padding-inline-end: var(--keen-layout--padding);
+    @layer grid.core {
+        [keen-grid] {
+            --keen-grid--border-style: none;
+            --keen-grid--border-block-start-style: var(--keen-grid--border-style);
+            --keen-grid--border-block-end-style: var(--keen-grid--border-style);
+            --keen-grid--border-inline-start-style: var(--keen-grid--border-style);
+            --keen-grid--border-inline-end-style: var(--keen-grid--border-style);
+            --keen-grid--border-width: 3px;
+            --keen-grid--border-block-start-width: var(--keen-grid--border-width);
+            --keen-grid--border-block-end-width: var(--keen-grid--border-width);
+            --keen-grid--border-inline-start-width: var(--keen-grid--border-width);
+            --keen-grid--border-inline-end-width: var(--keen-grid--border-width);
+            --keen-grid--padding: 0;
+            --keen-grid--padding-block-start: var(--keen-grid--padding);
+            --keen-grid--padding-block-end: var(--keen-grid--padding);
+            --keen-grid--padding-inline-start: var(--keen-grid--padding);
+            --keen-grid--padding-inline-end: var(--keen-grid--padding);
             --keen-type--max-inline-size: none;
 
-            --keen-layout--column-width: 18ch;
-            --keen-layout--column-count: auto;
-            --keen-layout--gap: var(--KEEN-TYPE--SIZE-M, 1rlh);
-            --keen-layout--column-gap: var(--keen-layout--gap);
-            --keen-layout--row-gap: var(--keen-layout--gap);
+            --keen-grid--column-width: 18ch;
+            --keen-grid--column-count: auto;
+            --keen-grid--gap: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--column-gap: var(--keen-grid--gap);
+            --keen-grid--row-gap: var(--keen-grid--gap);
 
             display: block;
             list-style-type: '';
-            column-gap: var(--keen-layout--column-gap);
-            row-gap: var(--keen-layout--row-gap);
+            column-gap: var(--keen-grid--column-gap);
+            row-gap: var(--keen-grid--row-gap);
 
-            border-block-start-style: var(--keen-layout--border-block-start-style);
-            border-block-end-style: var(--keen-layout--border-block-end-style);
-            border-inline-start-style: var(--keen-layout--border-inline-start-style);
-            border-inline-end-style: var(--keen-layout--border-inline-end-style);
-            border-block-start-width: var(--keen-layout--border-block-start-width);
-            border-block-end-width: var(--keen-layout--border-block-end-width);
-            border-inline-start-width: var(--keen-layout--border-inline-start-width);
-            border-inline-end-width: var(--keen-layout--border-inline-end-width);
-            padding-block-start: var(--keen-layout--padding-block-start);
-            padding-block-end: var(--keen-layout--padding-block-end);
-            padding-inline-start: var(--keen-layout--padding-inline-start);
-            padding-inline-end: var(--keen-layout--padding-inline-end);
+            border-block-start-style: var(--keen-grid--border-block-start-style);
+            border-block-end-style: var(--keen-grid--border-block-end-style);
+            border-inline-start-style: var(--keen-grid--border-inline-start-style);
+            border-inline-end-style: var(--keen-grid--border-inline-end-style);
+            border-block-start-width: var(--keen-grid--border-block-start-width);
+            border-block-end-width: var(--keen-grid--border-block-end-width);
+            border-inline-start-width: var(--keen-grid--border-inline-start-width);
+            border-inline-end-width: var(--keen-grid--border-inline-end-width);
+            padding-block-start: var(--keen-grid--padding-block-start);
+            padding-block-end: var(--keen-grid--padding-block-end);
+            padding-inline-start: var(--keen-grid--padding-inline-start);
+            padding-inline-end: var(--keen-grid--padding-inline-end);
             max-inline-size: var(--keen-type--max-inline-size);
 
             * {
                 margin: 0;
-                --_keen-layout--flow-space: initial;
+                --_keen-grid--flow-space: initial;
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
+                margin-block-start: var(--_keen-grid--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -349,12 +349,12 @@
             }
         }
 
-        [keen-layout]:where(body) {
+        [keen-grid]:where(body) {
             margin: 0;
         }
 
-        [keen-layout=""] > * + * {
-            margin-block-start: var(--_keen-layout--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
+        [keen-grid=""] > * + * {
+            margin-block-start: var(--_keen-grid--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
         }
     }
 

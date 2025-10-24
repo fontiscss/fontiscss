@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/*!
+ * keen.css - The Algorithmic CSS Framework
+ *
+ * @author David J. Schwarz <mail+oss@davidschwarz.eu>
+ * @license MIT License
+ */
+
+@layer keen.grid.lib {
+    [keen-grid|="flow"] > * + * {
+        margin-block-start: var(--_keen-grid--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
+    }
+
+    [keen-grid|="grid"] {
+        --keen-grid--column-count: auto-fit;
+        display: grid;
+        grid-template-columns: repeat(var(--keen-grid--column-count), minmax(min(100%, var(--keen-grid--column-width)), 1fr));
+    }
+
+    [keen-grid|="chain"] {
+        display: grid;
+        grid-auto-columns: var(--keen-grid--column-width);
+        grid-auto-flow: column;
+        overflow: auto;
+    }
+
+    [keen-grid|="flex"] {
+        display: flex;
+        overflow: auto;
+    }
+
+    [keen-grid|="string"] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    [keen-grid|="flexgrid"] {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            flex-grow: 1;
+        }
+    }
+
+    [keen-grid|="flow"],
+    [keen-grid|="grid"],
+    [keen-grid|="chain"],
+    [keen-grid|="flex"],
+    [keen-grid|="string"],
+    [keen-grid|="flexgrid"] {
+
+        &:where([keen-grid$="-box"],
+            [keen-grid$="-pack"],
+            [keen-grid$="-pad"]) {
+            --keen-grid--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
+        }
+
+        &:where([keen-grid$="-pack"]) {
+            padding-block-start: max(0px, calc(var(--keen-grid--padding-block-start) - max(0px, var(--keen-grid--border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--keen-grid--padding-block-end) - max(0px, var(--keen-grid--border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--keen-grid--padding-inline-start) - max(0px, var(--keen-grid--border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--keen-grid--padding-inline-end) - max(0px, var(--keen-grid--border-inline-end-width))));
+        }
+
+        &:where([keen-grid$="-box"],
+            [keen-grid$="-pack"]) {
+            --keen-grid--border-style: solid;
+        }
+    }
+}
