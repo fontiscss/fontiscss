@@ -101,10 +101,10 @@
             --keen-type-heading-5--letter-spacing: var(--keen-type-heading--letter-spacing);
             --keen-type-heading-6--letter-spacing: var(--keen-type-heading--letter-spacing);
 
-            --keen-type--link-text-decoration-line: underline;
-            --keen-type--link-visited-text-decoration-line: var(--keen-type--link-text-decoration-line);
-            --keen-type--link-text-decoration-thickness: from-font;
-            --keen-type--link-visited-text-decoration-thickness: var(--keen-type--link-text-decoration-thickness);
+            --keen-type-link--text-decoration-line: underline;
+            --keen-type-link-visited--text-decoration-line: var(--keen-type-link--text-decoration-line);
+            --keen-type-link--text-decoration-thickness: from-font;
+            --keen-type-link-visited--text-decoration-thickness: var(--keen-type-link--text-decoration-thickness);
 
             --keen-type--small-font-scale: var(--KEEN-TYPE--SCALE-S);
 
@@ -245,13 +245,13 @@
             /* # link */
 
             & a:where(:not(&)):link {
-                text-decoration-line: var(--keen-type--link-text-decoration-line);
-                text-decoration-thickness: var(--keen-type--link-text-decoration-thickness);
+                text-decoration-line: var(--keen-type-link--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-link--text-decoration-thickness);
             }
 
             & a:where(:not(&)):visited {
-                text-decoration-line: var(--keen-type--link-visited-text-decoration-line);
-                text-decoration-thickness: var(--keen-type--link-visited-text-decoration-thickness);
+                text-decoration-line: var(--keen-type-link-visited--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-link-visited--text-decoration-thickness);
             }
 
             /* # adjustment */
