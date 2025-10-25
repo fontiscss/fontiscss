@@ -303,18 +303,6 @@
             --keen-grid--padding-block-end: var(--keen-grid--padding);
             --keen-grid--padding-inline-start: var(--keen-grid--padding);
             --keen-grid--padding-inline-end: var(--keen-grid--padding);
-            --keen-type--max-inline-size: none;
-
-            --keen-grid--column-width: 18ch;
-            --keen-grid--column-count: auto;
-            --keen-grid--gap: var(--KEEN-TYPE--SIZE-M, 1rlh);
-            --keen-grid--column-gap: var(--keen-grid--gap);
-            --keen-grid--row-gap: var(--keen-grid--gap);
-
-            display: block;
-            list-style-type: '';
-            column-gap: var(--keen-grid--column-gap);
-            row-gap: var(--keen-grid--row-gap);
 
             border-block-start-style: var(--keen-grid--border-block-start-style);
             border-block-end-style: var(--keen-grid--border-block-end-style);
@@ -328,15 +316,15 @@
             padding-block-end: var(--keen-grid--padding-block-end);
             padding-inline-start: var(--keen-grid--padding-inline-start);
             padding-inline-end: var(--keen-grid--padding-inline-end);
-            max-inline-size: var(--keen-type--max-inline-size);
+            list-style-type: '';
 
-            * {
+            & * {
                 margin: 0;
                 --_keen-grid--flow-space: initial;
             }
 
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--_keen-grid--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
+                margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SLH, 1rlh)));
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -353,8 +341,12 @@
             margin: 0;
         }
 
-        [keen-grid=""] > * + * {
-            margin-block-start: var(--_keen-grid--flow-space, max(var(--KEEN-TYPE--SIZE-M, 1rlh), 1lh));
+        [keen-grid=""] {
+            display: grid;
+
+            & > * + * {
+                margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SLH, 1rlh)));
+            }
         }
     }
 
