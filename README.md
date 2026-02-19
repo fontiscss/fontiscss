@@ -79,7 +79,7 @@ To customize a base algorithm, **hook into the corresponding `core` layer**. In 
 
 @layer keen.type.core {
     [keen-type] {
-        --keen-type--font-size-base: clamp(1rem, 0.8913rem + 0.5435vw, 1.3125rem);
+        --keen-type--font-size-base: clamp(1rem, 0.8913rem + 0.5435vi, 1.3125rem);
         --keen-type--scale-ratio: 1.25;
     }
 }
