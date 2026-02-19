@@ -106,7 +106,7 @@
             --keen-type-link--text-decoration-thickness: from-font;
             --keen-type-link-visited--text-decoration-thickness: var(--keen-type-link--text-decoration-thickness);
 
-            --keen-type--small-font-scale: var(--KEEN-TYPE--SCALE-S);
+            --keen-type-small--font-scale: var(--KEEN-TYPE--SCALE-S);
 
             /* # scaling */
 
@@ -130,7 +130,7 @@
             }
 
             & small:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type--small-font-scale);
+                --_keen-type--font-scale: var(--keen-type-small--font-scale);
             }
 
             & h6:where(:not(&)) {
