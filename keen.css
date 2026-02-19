@@ -101,10 +101,10 @@
             --keen-type-heading-5--letter-spacing: var(--keen-type-heading--letter-spacing);
             --keen-type-heading-6--letter-spacing: var(--keen-type-heading--letter-spacing);
 
-            --keen-type-link--text-decoration-line: underline;
-            --keen-type-link-visited--text-decoration-line: var(--keen-type-link--text-decoration-line);
-            --keen-type-link--text-decoration-thickness: from-font;
-            --keen-type-link-visited--text-decoration-thickness: var(--keen-type-link--text-decoration-thickness);
+            --keen-type-a--text-decoration-line: underline;
+            --keen-type-a-visited--text-decoration-line: var(--keen-type-a--text-decoration-line);
+            --keen-type-a--text-decoration-thickness: from-font;
+            --keen-type-a-visited--text-decoration-thickness: var(--keen-type-a--text-decoration-thickness);
 
             --keen-type-small--font-scale: var(--KEEN-TYPE--SCALE-S);
 
@@ -245,13 +245,13 @@
             /* # link */
 
             & a:where(:not(&)):link {
-                text-decoration-line: var(--keen-type-link--text-decoration-line);
-                text-decoration-thickness: var(--keen-type-link--text-decoration-thickness);
+                text-decoration-line: var(--keen-type-a--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-a--text-decoration-thickness);
             }
 
             & a:where(:not(&)):visited {
-                text-decoration-line: var(--keen-type-link-visited--text-decoration-line);
-                text-decoration-thickness: var(--keen-type-link-visited--text-decoration-thickness);
+                text-decoration-line: var(--keen-type-a-visited--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-a-visited--text-decoration-thickness);
             }
 
             /* # adjustment */
@@ -367,12 +367,12 @@
             --keen-skin-heading-4--text-color: var(--keen-skin-heading--text-color);
             --keen-skin-heading-5--text-color: var(--keen-skin-heading--text-color);
             --keen-skin-heading-6--text-color: var(--keen-skin-heading--text-color);
-            --keen-skin-link--text-color: LinkText;
-            --keen-skin-link-visited--text-color: VisitedText;
-            --keen-skin-link-active--text-color: ActiveText;
-            --keen-skin-link--text-decoration-color: currentcolor;
-            --keen-skin-link-visited--text-decoration-color: currentcolor;
-            --keen-skin-link-active--text-decoration-color: currentcolor;
+            --keen-skin-a--text-color: LinkText;
+            --keen-skin-a-visited--text-color: VisitedText;
+            --keen-skin-a-active--text-color: ActiveText;
+            --keen-skin-a--text-decoration-color: currentcolor;
+            --keen-skin-a-visited--text-decoration-color: currentcolor;
+            --keen-skin-a-active--text-decoration-color: currentcolor;
 
             color: var(--keen-skin--text-color);
             background-color: var(--keen-skin--background-color);
@@ -407,18 +407,18 @@
             }
 
             & a:where(:not(&)):link {
-                color: var(--keen-skin-link--text-color);
-                text-decoration-color: var(--keen-skin-link--text-decoration-color);
+                color: var(--keen-skin-a--text-color);
+                text-decoration-color: var(--keen-skin-a--text-decoration-color);
             }
 
             & a:where(:not(&)):visited {
-                color: var(--keen-skin-link-visited--text-color);
-                text-decoration-color: var(--keen-skin-link-visited--text-decoration-color);
+                color: var(--keen-skin-a-visited--text-color);
+                text-decoration-color: var(--keen-skin-a-visited--text-decoration-color);
             }
 
             & a:where(:not(&)):any-link:active {
-                color: var(--keen-skin-link-active--text-color);
-                text-decoration-color: var(--keen-skin-link-active--text-decoration-color);
+                color: var(--keen-skin-a-active--text-color);
+                text-decoration-color: var(--keen-skin-a-active--text-decoration-color);
             }
         }
     }
