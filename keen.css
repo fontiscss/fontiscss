@@ -353,6 +353,7 @@
 
     @layer skin.core {
         [keen-skin] {
+            --keen-skin--color-scheme: only light;
             --keen-skin--text-color: CanvasText;
             --keen-skin--text-decoration-color: currentcolor;
             --keen-skin--background-color: Canvas;
@@ -376,6 +377,7 @@
             --keen-skin-a-active--text-decoration-color: currentcolor;
 
             color: var(--keen-skin--text-color);
+            color-scheme: var(--keen-skin--color-scheme);
             background-color: var(--keen-skin--background-color);
             border-block-start-color: var(--keen-skin--border-block-start-color);
             border-block-end-color: var(--keen-skin--border-block-end-color);
@@ -421,6 +423,10 @@
                 color: var(--keen-skin-a-active--text-color);
                 text-decoration-color: var(--keen-skin-a-active--text-decoration-color);
             }
+        }
+
+        [keen-skin=""] {
+            --keen-skin--color-scheme: light dark;
         }
     }
 }
