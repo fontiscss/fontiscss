@@ -342,6 +342,7 @@
         }
 
         [keen-grid=""] {
+            --keen-grid--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
             display: grid;
 
             & > * + * {
