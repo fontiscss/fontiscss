@@ -323,6 +323,10 @@
                 --_keen-grid--flow-space: initial;
             }
 
+            & body {
+                --_keen-grid--flow-space: 0;
+            }
+
             & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
                 margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
             }
