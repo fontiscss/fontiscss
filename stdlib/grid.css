@@ -15,7 +15,7 @@
 
         --keen-lib-grid--max-inline-size: none;
 
-        --keen-lib-grid--column-width: 18ch;
+        --keen-lib-grid--column-track-size: 36ch;
         --keen-lib-grid--column-repeat-count: auto-fit;
     }
 
@@ -41,17 +41,19 @@
 
     [keen-grid|="grid"] {
         display: grid;
-        grid-template-columns: repeat(var(--keen-lib-grid--column-repeat-count), minmax(min(100%, var(--keen-lib-grid--column-width)), 1fr));
+        grid-template-columns: repeat(var(--keen-lib-grid--column-repeat-count), minmax(min(100%, var(--keen-lib-grid--column-track-size)), 1fr));
     }
 
     [keen-grid|="chain"] {
+        contain: inline-size;
         display: grid;
-        grid-auto-columns: var(--keen-lib-grid--column-width);
+        grid-auto-columns: var(--keen-lib-grid--column-track-size);
         grid-auto-flow: column;
         overflow: auto;
     }
 
     [keen-grid|="flex"] {
+        contain: inline-size;
         display: flex;
         overflow: auto;
     }
@@ -66,6 +68,7 @@
         flex-wrap: wrap;
 
         & > * {
+            flex-basis: var(--keen-lib-grid--column-track-size);
             flex-grow: 1;
         }
     }
