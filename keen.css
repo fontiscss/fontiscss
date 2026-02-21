@@ -132,15 +132,15 @@
 
             /* # scope-dependent sizes */
 
-            --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SCALE-XS) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SCALE-S) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SCALE-M) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SCALE-L) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SCALE-XL) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SCALE-XXL) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * 1rem * var(--keen-type--line-height));
-            --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXXL) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SCALE-XS) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SCALE-S) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SCALE-M) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SCALE-L) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SCALE-XL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SCALE-XXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
 
             /* # font / text */
 
@@ -156,7 +156,7 @@
             text-underline-offset: var(--keen-type--text-underline-offset);
 
             & small:where(:not(&)) {
-                font-size: calc(1rem * var(--keen-type-small--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-small--font-scale));
             }
 
             & :is(h1, h2, h3, h4, h5, h6, p, dl, blockquote, figure, pre, ul, menu, ol, hr):where(:not(&)) {
@@ -169,7 +169,7 @@
 
             & h6:where(:not(&)) {
                 font-family: var(--keen-type-heading-6--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-6--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-6--font-scale));
                 font-weight: var(--keen-type-heading-6--font-weight);
                 letter-spacing: var(--keen-type-heading-6--letter-spacing);
                 line-height: var(--keen-type-heading-6--line-height);
@@ -181,7 +181,7 @@
 
             & h5:where(:not(&)) {
                 font-family: var(--keen-type-heading-5--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-5--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-5--font-scale));
                 font-weight: var(--keen-type-heading-5--font-weight);
                 letter-spacing: var(--keen-type-heading-5--letter-spacing);
                 line-height: var(--keen-type-heading-5--line-height);
@@ -193,7 +193,7 @@
 
             & h4:where(:not(&)) {
                 font-family: var(--keen-type-heading-4--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-4--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-4--font-scale));
                 font-weight: var(--keen-type-heading-4--font-weight);
                 letter-spacing: var(--keen-type-heading-4--letter-spacing);
                 line-height: var(--keen-type-heading-4--line-height);
@@ -205,7 +205,7 @@
 
             & h3:where(:not(&)) {
                 font-family: var(--keen-type-heading-3--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-3--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-3--font-scale));
                 font-weight: var(--keen-type-heading-3--font-weight);
                 letter-spacing: var(--keen-type-heading-3--letter-spacing);
                 line-height: var(--keen-type-heading-3--line-height);
@@ -217,7 +217,7 @@
 
             & h2:where(:not(&)) {
                 font-family: var(--keen-type-heading-2--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-2--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-2--font-scale));
                 font-weight: var(--keen-type-heading-2--font-weight);
                 letter-spacing: var(--keen-type-heading-2--letter-spacing);
                 line-height: var(--keen-type-heading-2--line-height);
@@ -229,7 +229,7 @@
 
             & h1:where(:not(&)) {
                 font-family: var(--keen-type-heading-1--font-family);
-                font-size: calc(1rem * var(--keen-type-heading-1--font-scale));
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-heading-1--font-scale));
                 font-weight: var(--keen-type-heading-1--font-weight);
                 letter-spacing: var(--keen-type-heading-1--letter-spacing);
                 line-height: var(--keen-type-heading-1--line-height);
