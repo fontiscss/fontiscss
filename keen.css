@@ -32,19 +32,23 @@
 
         /**
          *
-         * @yield em     --KEEN-TYPE--SLH                   "scope lh" A calculated unit that refers to the base line height of the type scope.
-         * @yield number --KEEN-TYPE--SCALE-{XS-XXXXXL}     Scaling steps
-         * @yield em     --KEEN-TYPE--SIZE-{XS-XXXXXL}      Scaling of --KEEN-TYPE--SLH
+         * @yield number --KEEN-TYPE--SCALE-{XS-XXXXXL}
+         * @yield rem     --KEEN-TYPE--SIZE-{XS-XXXXXL}
          */
         [keen-type] {
+            --keen-type--flow-space-block-start: var(--KEEN-TYPE--SIZE-M);
+            --keen-type--flow-space-block-end: var(--KEEN-TYPE--SIZE-M);
             --keen-type--font-family: system-ui, sans-serif;
-            --keen-type--font-size-base: 1rem;
+            --keen-type--font-size-base: 1;
+            --keen-type--font-weight: normal;
             --keen-type--letter-spacing: normal;
             --keen-type--line-height: 1.5;
             --keen-type--scale-ratio: 1.2;
             --keen-type--text-align: start;
             --keen-type--text-transform: none;
             --keen-type--text-underline-offset: auto;
+
+            --keen-type-content--flow-space: var(--KEEN-TYPE--SIZE-M);
 
             --keen-type-heading--font-family: inherit;
             --keen-type-heading-1--font-family: var(--keen-type-heading--font-family);
@@ -66,12 +70,18 @@
             --keen-type-heading-4--font-scale: var(--KEEN-TYPE--SCALE-L);
             --keen-type-heading-5--font-scale: var(--KEEN-TYPE--SCALE-M);
             --keen-type-heading-6--font-scale: var(--KEEN-TYPE--SCALE-S);
-            --keen-type-heading-1--line-height: 1.3;
-            --keen-type-heading-2--line-height: 1.4;
-            --keen-type-heading-3--line-height: 1.5;
-            --keen-type-heading-4--line-height: 1.5;
-            --keen-type-heading-5--line-height: 1.5;
-            --keen-type-heading-6--line-height: 1.5;
+            --keen-type-heading-1--line-height: var(--keen-type--line-height);
+            --keen-type-heading-2--line-height: var(--keen-type--line-height);
+            --keen-type-heading-3--line-height: var(--keen-type--line-height);
+            --keen-type-heading-4--line-height: var(--keen-type--line-height);
+            --keen-type-heading-5--line-height: var(--keen-type--line-height);
+            --keen-type-heading-6--line-height: var(--keen-type--line-height);
+            --keen-type-heading-1--flow-space: var(--KEEN-TYPE--SIZE-XXXXXL);
+            --keen-type-heading-2--flow-space: var(--KEEN-TYPE--SIZE-XXXXL);
+            --keen-type-heading-3--flow-space: var(--KEEN-TYPE--SIZE-XXXL);
+            --keen-type-heading-4--flow-space: var(--KEEN-TYPE--SIZE-XXL);
+            --keen-type-heading-5--flow-space: var(--keen-type-content--flow-space);
+            --keen-type-heading-6--flow-space: var(--keen-type-content--flow-space);
             --keen-type-heading--text-align: inherit;
             --keen-type-heading-1--text-align: var(--keen-type-heading--text-align);
             --keen-type-heading-2--text-align: var(--keen-type-heading--text-align);
@@ -120,73 +130,50 @@
             --KEEN-TYPE--SCALE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * var(--keen-type--scale-ratio));
             --KEEN-TYPE--SCALE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * var(--keen-type--scale-ratio));
 
-            /* # font sizing */
-
-            font-size: var(--keen-type--font-size-base);
-            --_keen-type--font-scale: var(--KEEN-TYPE--SCALE-M);
-
-            & :is(h1, h2, h3, h4, h5, h6, small):where(:not(&)) {
-                font-size: calc(1em * var(--_keen-type--font-scale));
-            }
-
-            & small:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-small--font-scale);
-            }
-
-            & h6:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-6--font-scale);
-            }
-
-            & h5:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-5--font-scale);
-            }
-
-            & h4:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-4--font-scale);
-            }
-
-            & h3:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-3--font-scale);
-            }
-
-            & h2:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-2--font-scale);
-            }
-
-            & h1:where(:not(&)) {
-                --_keen-type--font-scale: var(--keen-type-heading-1--font-scale);
-            }
-
             /* # scope-dependent sizes */
 
-            &,
-            & * {
-                --KEEN-TYPE--SLH: calc((1em / var(--_keen-type--font-scale)) * var(--keen-type--line-height));
-                --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XS));
-                --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-S));
-                --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-M));
-                --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-L));
-                --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XL));
-                --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXL));
-                --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXL));
-                --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXXL));
-                --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SLH) * var(--KEEN-TYPE--SCALE-XXXXXL));
-            }
+            --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SCALE-XS) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SCALE-S) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SCALE-M) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SCALE-L) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SCALE-XL) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SCALE-XXL) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * 1rem * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXXL) * 1rem * var(--keen-type--line-height));
 
             /* # font / text */
 
             font-family: var(--keen-type--font-family);
+            font-size: calc(1rem * var(--keen-type--font-size-base));
+            font-weight: var(--keen-type--font-weight);
             letter-spacing: var(--keen-type--letter-spacing);
             line-height: var(--keen-type--line-height);
+            margin-block-start: var(--keen-type--flow-space-block-start);
+            margin-block-end: var(--keen-type--flow-space-block-end);
             text-align: var(--keen-type--text-align);
             text-transform: var(--keen-type--text-transform);
             text-underline-offset: var(--keen-type--text-underline-offset);
 
+            & small:where(:not(&)) {
+                font-size: calc(1rem * var(--keen-type-small--font-scale));
+            }
+
+            & :is(h1, h2, h3, h4, h5, h6, p, dl, blockquote, figure, pre, ul, menu, ol, hr):where(:not(&)) {
+                margin-block: var(--keen-type-content--flow-space);
+            }
+
+            :is(ul, ol, dir, menu, dl) :is(ul, ol, dir, menu, dl):where(:not(&)) {
+                margin-block: 0;
+            }
+
             & h6:where(:not(&)) {
                 font-family: var(--keen-type-heading-6--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-6--font-scale));
                 font-weight: var(--keen-type-heading-6--font-weight);
                 letter-spacing: var(--keen-type-heading-6--letter-spacing);
                 line-height: var(--keen-type-heading-6--line-height);
+                margin-block-start: var(--keen-type-heading-6--flow-space);
                 text-align: var(--keen-type-heading-6--text-align);
                 text-transform: var(--keen-type-heading-6--text-transform);
                 text-underline-offset: var(--keen-type-heading-6--text-underline-offset);
@@ -194,9 +181,11 @@
 
             & h5:where(:not(&)) {
                 font-family: var(--keen-type-heading-5--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-5--font-scale));
                 font-weight: var(--keen-type-heading-5--font-weight);
                 letter-spacing: var(--keen-type-heading-5--letter-spacing);
                 line-height: var(--keen-type-heading-5--line-height);
+                margin-block-start: var(--keen-type-heading-5--flow-space);
                 text-align: var(--keen-type-heading-5--text-align);
                 text-transform: var(--keen-type-heading-5--text-transform);
                 text-underline-offset: var(--keen-type-heading-5--text-underline-offset);
@@ -204,9 +193,11 @@
 
             & h4:where(:not(&)) {
                 font-family: var(--keen-type-heading-4--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-4--font-scale));
                 font-weight: var(--keen-type-heading-4--font-weight);
                 letter-spacing: var(--keen-type-heading-4--letter-spacing);
                 line-height: var(--keen-type-heading-4--line-height);
+                margin-block-start: var(--keen-type-heading-4--flow-space);
                 text-align: var(--keen-type-heading-4--text-align);
                 text-transform: var(--keen-type-heading-4--text-transform);
                 text-underline-offset: var(--keen-type-heading-4--text-underline-offset);
@@ -214,9 +205,11 @@
 
             & h3:where(:not(&)) {
                 font-family: var(--keen-type-heading-3--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-3--font-scale));
                 font-weight: var(--keen-type-heading-3--font-weight);
                 letter-spacing: var(--keen-type-heading-3--letter-spacing);
                 line-height: var(--keen-type-heading-3--line-height);
+                margin-block-start: var(--keen-type-heading-3--flow-space);
                 text-align: var(--keen-type-heading-3--text-align);
                 text-transform: var(--keen-type-heading-3--text-transform);
                 text-underline-offset: var(--keen-type-heading-3--text-underline-offset);
@@ -224,9 +217,11 @@
 
             & h2:where(:not(&)) {
                 font-family: var(--keen-type-heading-2--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-2--font-scale));
                 font-weight: var(--keen-type-heading-2--font-weight);
                 letter-spacing: var(--keen-type-heading-2--letter-spacing);
                 line-height: var(--keen-type-heading-2--line-height);
+                margin-block-start: var(--keen-type-heading-2--flow-space);
                 text-align: var(--keen-type-heading-2--text-align);
                 text-transform: var(--keen-type-heading-2--text-transform);
                 text-underline-offset: var(--keen-type-heading-2--text-underline-offset);
@@ -234,9 +229,11 @@
 
             & h1:where(:not(&)) {
                 font-family: var(--keen-type-heading-1--font-family);
+                font-size: calc(1rem * var(--keen-type-heading-1--font-scale));
                 font-weight: var(--keen-type-heading-1--font-weight);
                 letter-spacing: var(--keen-type-heading-1--letter-spacing);
                 line-height: var(--keen-type-heading-1--line-height);
+                margin-block-start: var(--keen-type-heading-1--flow-space);
                 text-align: var(--keen-type-heading-1--text-align);
                 text-transform: var(--keen-type-heading-1--text-transform);
                 text-underline-offset: var(--keen-type-heading-1--text-underline-offset);
@@ -264,14 +261,6 @@
                 text-wrap: balance;
             }
 
-            /* # default grid if no grid algorithm is available */
-
-            & :is(h1, h2, h3, h4, h5, h6) {
-                margin: 0;
-                margin-block-start: max(var(--KEEN-TYPE--SIZE-M), 1lh);
-                margin-block-end: var(--KEEN-TYPE--SIZE-M);
-            }
-
             & img {
                 max-inline-size: 100%;
             }
@@ -284,6 +273,10 @@
                 vertical-align: baseline;
             }
         }
+
+        html[keen-type] {
+            margin: 0;
+        }
     }
 
     @layer grid.core {
@@ -293,7 +286,7 @@
             --keen-grid--border-block-end-style: var(--keen-grid--border-style);
             --keen-grid--border-inline-start-style: var(--keen-grid--border-style);
             --keen-grid--border-inline-end-style: var(--keen-grid--border-style);
-            --keen-grid--border-width: 3px;
+            --keen-grid--border-width: 0;
             --keen-grid--border-block-start-width: var(--keen-grid--border-width);
             --keen-grid--border-block-end-width: var(--keen-grid--border-width);
             --keen-grid--border-inline-start-width: var(--keen-grid--border-width);
@@ -323,12 +316,63 @@
                 --_keen-grid--flow-space: initial;
             }
 
-            & body {
-                --_keen-grid--flow-space: 0;
+            & h1:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-1--flow-space, 4.479rem);
             }
 
-            & :is(article, aside, footer, header, nav, section):where(:not(&)) > * + * {
-                margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
+            & h2:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-2--flow-space, 3.732rem);
+            }
+
+            & h3:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-3--flow-space, 3.111rem);
+            }
+
+            & h4:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-4--flow-space, 2.592rem);
+            }
+
+            & h5:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-5--flow-space, 1.5rem);
+            }
+
+            & h6:where(:not(&)) {
+                --_keen-grid--flow-space: var(--keen-type-heading-6--flow-space, 1.5rem);
+            }
+
+            & :is(div, body, main, article, aside, footer, header, nav, section):where(:not(&)) {
+
+                & > * + * {
+                    margin-block-start: var(--_keen-grid--flow-space, var(--keen-type-content--flow-space, 1rlh));
+                }
+
+                &:where(&:has(> h1:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-1--flow-space, 4.479rem);
+                }
+
+                &:where(&:has(> h2:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-2--flow-space, 3.732rem);
+                }
+
+                &:where(&:has(> h3:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-3--flow-space, 3.111rem);
+                }
+
+                &:where(&:has(> h4:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-4--flow-space, 2.592rem);
+                }
+
+                &:where(&:has(> h5:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-5--flow-space, 1.5rem);
+                }
+
+                &:where(&:has(> h6:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-heading-6--flow-space, 1.5rem);
+                }
+            }
+
+            & body {
+                --_keen-grid--flow-space: 0;
             }
 
             & :is(img, picture):where(:not(&)) {
@@ -350,7 +394,7 @@
             display: grid;
 
             & > * + * {
-                margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
+                margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--keen-type-content--flow-space, 1rlh)));
             }
         }
     }
