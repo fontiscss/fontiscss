@@ -96,7 +96,7 @@
             --keen-type-heading-4--text-transform: var(--keen-type-heading--text-transform);
             --keen-type-heading-5--text-transform: var(--keen-type-heading--text-transform);
             --keen-type-heading-6--text-transform: var(--keen-type-heading--text-transform);
-            --keen-type-heading--text-underline-offset: var(--keen-type--text-underline-offset);
+            --keen-type-heading--text-underline-offset: inherit;
             --keen-type-heading-1--text-underline-offset: var(--keen-type-heading--text-underline-offset);
             --keen-type-heading-2--text-underline-offset: var(--keen-type-heading--text-underline-offset);
             --keen-type-heading-3--text-underline-offset: var(--keen-type-heading--text-underline-offset);
