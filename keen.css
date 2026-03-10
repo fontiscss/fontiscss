@@ -68,12 +68,12 @@
             --keen-type-h4--font-scale: var(--KEEN-TYPE--SCALE-L);
             --keen-type-h5--font-scale: var(--KEEN-TYPE--SCALE-M);
             --keen-type-h6--font-scale: var(--KEEN-TYPE--SCALE-S);
-            --keen-type-h1--line-height: var(--keen-type--line-height);
-            --keen-type-h2--line-height: var(--keen-type--line-height);
-            --keen-type-h3--line-height: var(--keen-type--line-height);
-            --keen-type-h4--line-height: var(--keen-type--line-height);
-            --keen-type-h5--line-height: var(--keen-type--line-height);
-            --keen-type-h6--line-height: var(--keen-type--line-height);
+            --keen-type-h1--line-height: inherit;
+            --keen-type-h2--line-height: inherit;
+            --keen-type-h3--line-height: inherit;
+            --keen-type-h4--line-height: inherit;
+            --keen-type-h5--line-height: inherit;
+            --keen-type-h6--line-height: inherit;
             --keen-type-h1--flow-space: var(--KEEN-TYPE--SIZE-XXXXXL);
             --keen-type-h2--flow-space: var(--KEEN-TYPE--SIZE-XXXXL);
             --keen-type-h3--flow-space: var(--KEEN-TYPE--SIZE-XXXL);
