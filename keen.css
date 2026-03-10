@@ -384,8 +384,6 @@
         }
 
         [keen-grid=""] {
-            display: grid;
-
             &:where(html, body) {
                 --keen-grid--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
             }
