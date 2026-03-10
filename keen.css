@@ -103,7 +103,7 @@
             --keen-type-heading-4--text-underline-offset: var(--keen-type-heading--text-underline-offset);
             --keen-type-heading-5--text-underline-offset: var(--keen-type-heading--text-underline-offset);
             --keen-type-heading-6--text-underline-offset: var(--keen-type-heading--text-underline-offset);
-            --keen-type-heading--letter-spacing: normal;
+            --keen-type-heading--letter-spacing: inherit;
             --keen-type-heading-1--letter-spacing: var(--keen-type-heading--letter-spacing);
             --keen-type-heading-2--letter-spacing: var(--keen-type-heading--letter-spacing);
             --keen-type-heading-3--letter-spacing: var(--keen-type-heading--letter-spacing);
