@@ -38,7 +38,7 @@
         [keen-type] {
             --keen-type--flow-space-block-start: var(--KEEN-TYPE--SIZE-M);
             --keen-type--flow-space-block-end: var(--KEEN-TYPE--SIZE-M);
-            --keen-type--font-family: system-ui, sans-serif;
+            --keen-type--font-family: sans-serif;
             --keen-type--font-size-base: 1;
             --keen-type--font-weight: normal;
             --keen-type--letter-spacing: normal;
