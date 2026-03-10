@@ -30,13 +30,13 @@
         row-gap: var(--keen-lib-grid--row-gap);
     }
 
-    [keen-grid|="flow"] {
+    [keen-grid|="flow"] > * + * {
+        margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
+    }
+
+    [keen-grid|="flow-stack"] {
         display: grid;
         row-gap: 0;
-
-        & > * + * {
-            margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
-        }
     }
 
     [keen-grid|="grid"] {
