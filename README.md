@@ -95,9 +95,10 @@ To create a variant, add it to the library. To do this, **hook into the correspo
 @layer keen.type.lib {
     [keen-type|="pagecontent"] {
         --keen-type--font-size-base: calc(1em * var(--KEEN-TYPE--SCALE-L));
-        --keen-type-heading--font-family: serif;
-        --keen-type-heading-5--font-family: inherit;
-        --keen-type-heading-6--font-family: inherit;
+        --keen-type-h1--font-family: serif;
+        --keen-type-h2--font-family: serif;
+        --keen-type-h3--font-family: serif;
+        --keen-type-h4--font-family: serif;
     }
 }
 ```
