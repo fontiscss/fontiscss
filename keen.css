@@ -89,7 +89,7 @@
             --keen-type-heading-4--text-align: var(--keen-type-heading--text-align);
             --keen-type-heading-5--text-align: var(--keen-type-heading--text-align);
             --keen-type-heading-6--text-align: var(--keen-type-heading--text-align);
-            --keen-type-heading--text-transform: none;
+            --keen-type-heading--text-transform: inherit;
             --keen-type-heading-1--text-transform: var(--keen-type-heading--text-transform);
             --keen-type-heading-2--text-transform: var(--keen-type-heading--text-transform);
             --keen-type-heading-3--text-transform: var(--keen-type-heading--text-transform);
