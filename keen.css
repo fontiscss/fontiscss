@@ -398,7 +398,6 @@
         [keen-skin] {
             --keen-skin--color-scheme: only light;
             --keen-skin--text-color: CanvasText;
-            --keen-skin--text-decoration-color: currentcolor;
             --keen-skin--background-color: Canvas;
             --keen-skin--border-color: currentcolor;
             --keen-skin--border-block-start-color: var(--keen-skin--border-color);
@@ -425,7 +424,6 @@
             border-block-end-color: var(--keen-skin--border-block-end-color);
             border-inline-start-color: var(--keen-skin--border-inline-start-color);
             border-inline-end-color: var(--keen-skin--border-inline-end-color);
-            text-decoration-color: var(--keen-skin--text-decoration-color);
 
             & h6:where(:not(&)) {
                 color: var(--keen-skin-h6--text-color);
