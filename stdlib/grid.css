@@ -102,6 +102,10 @@
             --keen-grid--border-block-end-style: solid;
             --keen-grid--border-inline-start-style: solid;
             --keen-grid--border-inline-end-style: solid;
+            --keen-grid--border-block-start-width: 3px;
+            --keen-grid--border-block-end-width: 3px;
+            --keen-grid--border-inline-start-width: 3px;
+            --keen-grid--border-inline-end-width: 3px;
         }
     }
 }
