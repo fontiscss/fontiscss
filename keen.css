@@ -1,0 +1,441 @@
+@charset "utf-8";
+
+/*!
+ * keen.css - The Algorithmic CSS Framework
+ *
+ * @author David J. Schwarz <mail+oss@davidschwarz.eu>
+ * @license MIT License
+ */
+
+@layer keen.bootstrap;
+@layer keen.container.core;
+@layer keen.container.lib;
+@layer keen.type.core;
+@layer keen.type.lib;
+@layer keen.grid.core;
+@layer keen.grid.lib;
+@layer keen.skin.core;
+@layer keen.skin.lib;
+@layer keen.postprocess;
+
+@layer keen {
+    @layer container.core {
+        [keen-container] {
+            --keen-container--container-name: initial;
+            container-type: inline-size;
+            container-name: keen var(--keen-container--container-name, );
+            display: block;
+        }
+    }
+
+    @layer type.core {
+
+        /**
+         *
+         * @yield number --KEEN-TYPE--SCALE-{XS-XXXXXL}
+         * @yield rem     --KEEN-TYPE--SIZE-{XS-XXXXXL}
+         */
+        [keen-type] {
+            --keen-type--flow-space-block-start: var(--KEEN-TYPE--SIZE-M);
+            --keen-type--flow-space-block-end: var(--KEEN-TYPE--SIZE-M);
+            --keen-type--font-family: sans-serif;
+            --keen-type--font-size-base: 1;
+            --keen-type--font-weight: normal;
+            --keen-type--letter-spacing: normal;
+            --keen-type--line-height: 1.5;
+            --keen-type--scale-ratio: 1.2;
+            --keen-type--text-underline-offset: auto;
+
+            --keen-type-content--flow-space: var(--KEEN-TYPE--SIZE-M);
+
+            --keen-type-h1--font-family: inherit;
+            --keen-type-h2--font-family: inherit;
+            --keen-type-h3--font-family: inherit;
+            --keen-type-h4--font-family: inherit;
+            --keen-type-h5--font-family: inherit;
+            --keen-type-h6--font-family: inherit;
+            --keen-type-h1--font-weight: bolder;
+            --keen-type-h2--font-weight: bolder;
+            --keen-type-h3--font-weight: bolder;
+            --keen-type-h4--font-weight: bolder;
+            --keen-type-h5--font-weight: bolder;
+            --keen-type-h6--font-weight: bolder;
+            --keen-type-h1--font-scale: var(--KEEN-TYPE--SCALE-XXXL);
+            --keen-type-h2--font-scale: var(--KEEN-TYPE--SCALE-XXL);
+            --keen-type-h3--font-scale: var(--KEEN-TYPE--SCALE-XL);
+            --keen-type-h4--font-scale: var(--KEEN-TYPE--SCALE-L);
+            --keen-type-h5--font-scale: var(--KEEN-TYPE--SCALE-M);
+            --keen-type-h6--font-scale: var(--KEEN-TYPE--SCALE-S);
+            --keen-type-h1--line-height: inherit;
+            --keen-type-h2--line-height: inherit;
+            --keen-type-h3--line-height: inherit;
+            --keen-type-h4--line-height: inherit;
+            --keen-type-h5--line-height: inherit;
+            --keen-type-h6--line-height: inherit;
+            --keen-type-h1--flow-space: var(--KEEN-TYPE--SIZE-XXXXXL);
+            --keen-type-h2--flow-space: var(--KEEN-TYPE--SIZE-XXXXL);
+            --keen-type-h3--flow-space: var(--KEEN-TYPE--SIZE-XXXL);
+            --keen-type-h4--flow-space: var(--KEEN-TYPE--SIZE-XXL);
+            --keen-type-h5--flow-space: var(--keen-type-content--flow-space);
+            --keen-type-h6--flow-space: var(--keen-type-content--flow-space);
+            --keen-type-h1--text-underline-offset: inherit;
+            --keen-type-h2--text-underline-offset: inherit;
+            --keen-type-h3--text-underline-offset: inherit;
+            --keen-type-h4--text-underline-offset: inherit;
+            --keen-type-h5--text-underline-offset: inherit;
+            --keen-type-h6--text-underline-offset: inherit;
+            --keen-type-h1--letter-spacing: inherit;
+            --keen-type-h2--letter-spacing: inherit;
+            --keen-type-h3--letter-spacing: inherit;
+            --keen-type-h4--letter-spacing: inherit;
+            --keen-type-h5--letter-spacing: inherit;
+            --keen-type-h6--letter-spacing: inherit;
+
+            --keen-type-a--text-decoration-line: underline;
+            --keen-type-a-visited--text-decoration-line: var(--keen-type-a--text-decoration-line);
+            --keen-type-a--text-decoration-thickness: from-font;
+            --keen-type-a-visited--text-decoration-thickness: var(--keen-type-a--text-decoration-thickness);
+
+            --keen-type-small--font-scale: var(--KEEN-TYPE--SCALE-S);
+
+            /* # scaling */
+
+            --KEEN-TYPE--SCALE-XS: calc(var(--KEEN-TYPE--SCALE-S) / var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-S: calc(var(--KEEN-TYPE--SCALE-M) / var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-M: 1;
+            --KEEN-TYPE--SCALE-L: calc(var(--KEEN-TYPE--SCALE-M) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XL: calc(var(--KEEN-TYPE--SCALE-L) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXL: calc(var(--KEEN-TYPE--SCALE-XL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * var(--keen-type--scale-ratio));
+            --KEEN-TYPE--SCALE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * var(--keen-type--scale-ratio));
+
+            /* # scope-dependent sizes */
+
+            --KEEN-TYPE--SIZE-XS: calc(var(--KEEN-TYPE--SCALE-XS) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-S: calc(var(--KEEN-TYPE--SCALE-S) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-M: calc(var(--KEEN-TYPE--SCALE-M) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-L: calc(var(--KEEN-TYPE--SCALE-L) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XL: calc(var(--KEEN-TYPE--SCALE-XL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXL: calc(var(--KEEN-TYPE--SCALE-XXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXL: calc(var(--KEEN-TYPE--SCALE-XXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+            --KEEN-TYPE--SIZE-XXXXXL: calc(var(--KEEN-TYPE--SCALE-XXXXXL) * 1rem * var(--keen-type--font-size-base) * var(--keen-type--line-height));
+
+            /* # font / text */
+
+            font-family: var(--keen-type--font-family);
+            font-size: calc(1rem * var(--keen-type--font-size-base));
+            font-weight: var(--keen-type--font-weight);
+            letter-spacing: var(--keen-type--letter-spacing);
+            line-height: var(--keen-type--line-height);
+            margin-block-start: var(--keen-type--flow-space-block-start);
+            margin-block-end: var(--keen-type--flow-space-block-end);
+            text-underline-offset: var(--keen-type--text-underline-offset);
+
+            & small:where(:not(&)) {
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-small--font-scale));
+            }
+
+            & :is(h1, h2, h3, h4, h5, h6, p, dl, blockquote, figure, pre, ul, menu, ol, hr):where(:not(&)) {
+                margin-block: var(--keen-type-content--flow-space);
+            }
+
+            :is(ul, ol, dir, menu, dl) :is(ul, ol, dir, menu, dl):where(:not(&)) {
+                margin-block: 0;
+            }
+
+            & h6:where(:not(&)) {
+                font-family: var(--keen-type-h6--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h6--font-scale));
+                font-weight: var(--keen-type-h6--font-weight);
+                letter-spacing: var(--keen-type-h6--letter-spacing);
+                line-height: var(--keen-type-h6--line-height);
+                margin-block-start: var(--keen-type-h6--flow-space);
+                text-underline-offset: var(--keen-type-h6--text-underline-offset);
+            }
+
+            & h5:where(:not(&)) {
+                font-family: var(--keen-type-h5--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h5--font-scale));
+                font-weight: var(--keen-type-h5--font-weight);
+                letter-spacing: var(--keen-type-h5--letter-spacing);
+                line-height: var(--keen-type-h5--line-height);
+                margin-block-start: var(--keen-type-h5--flow-space);
+                text-underline-offset: var(--keen-type-h5--text-underline-offset);
+            }
+
+            & h4:where(:not(&)) {
+                font-family: var(--keen-type-h4--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h4--font-scale));
+                font-weight: var(--keen-type-h4--font-weight);
+                letter-spacing: var(--keen-type-h4--letter-spacing);
+                line-height: var(--keen-type-h4--line-height);
+                margin-block-start: var(--keen-type-h4--flow-space);
+                text-underline-offset: var(--keen-type-h4--text-underline-offset);
+            }
+
+            & h3:where(:not(&)) {
+                font-family: var(--keen-type-h3--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h3--font-scale));
+                font-weight: var(--keen-type-h3--font-weight);
+                letter-spacing: var(--keen-type-h3--letter-spacing);
+                line-height: var(--keen-type-h3--line-height);
+                margin-block-start: var(--keen-type-h3--flow-space);
+                text-underline-offset: var(--keen-type-h3--text-underline-offset);
+            }
+
+            & h2:where(:not(&)) {
+                font-family: var(--keen-type-h2--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h2--font-scale));
+                font-weight: var(--keen-type-h2--font-weight);
+                letter-spacing: var(--keen-type-h2--letter-spacing);
+                line-height: var(--keen-type-h2--line-height);
+                margin-block-start: var(--keen-type-h2--flow-space);
+                text-underline-offset: var(--keen-type-h2--text-underline-offset);
+            }
+
+            & h1:where(:not(&)) {
+                font-family: var(--keen-type-h1--font-family);
+                font-size: calc(1rem * var(--keen-type--font-size-base) * var(--keen-type-h1--font-scale));
+                font-weight: var(--keen-type-h1--font-weight);
+                letter-spacing: var(--keen-type-h1--letter-spacing);
+                line-height: var(--keen-type-h1--line-height);
+                margin-block-start: var(--keen-type-h1--flow-space);
+                text-underline-offset: var(--keen-type-h1--text-underline-offset);
+            }
+
+            /* # link */
+
+            & a:where(:not(&)):link {
+                text-decoration-line: var(--keen-type-a--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-a--text-decoration-thickness);
+            }
+
+            & a:where(:not(&)):visited {
+                text-decoration-line: var(--keen-type-a-visited--text-decoration-line);
+                text-decoration-thickness: var(--keen-type-a-visited--text-decoration-thickness);
+            }
+
+            /* # adjustment */
+
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+
+            & :is(h1, h2, h3, h4, h5, h6) {
+                hyphens: auto;
+                text-wrap: balance;
+            }
+
+            & img {
+                max-inline-size: 100%;
+            }
+
+            & :is(img, picture):where(:not(&)) {
+                vertical-align: bottom;
+            }
+
+            & :where(h1, h2, h3, h4, h5, h6, p):where(:not(&)) :is(img, picture):where(:not(&)) {
+                vertical-align: baseline;
+            }
+        }
+
+        html[keen-type] {
+            margin: 0;
+        }
+    }
+
+    @layer grid.core {
+        [keen-grid] {
+            --keen-grid--border-block-start-style: none;
+            --keen-grid--border-block-end-style: none;
+            --keen-grid--border-inline-start-style: none;
+            --keen-grid--border-inline-end-style: none;
+            --keen-grid--border-block-start-width: 0;
+            --keen-grid--border-block-end-width: 0;
+            --keen-grid--border-inline-start-width: 0;
+            --keen-grid--border-inline-end-width: 0;
+            --keen-grid--padding-block-start: 0;
+            --keen-grid--padding-block-end: 0;
+            --keen-grid--padding-inline-start: 0;
+            --keen-grid--padding-inline-end: 0;
+
+            border-block-start-style: var(--keen-grid--border-block-start-style);
+            border-block-end-style: var(--keen-grid--border-block-end-style);
+            border-inline-start-style: var(--keen-grid--border-inline-start-style);
+            border-inline-end-style: var(--keen-grid--border-inline-end-style);
+            border-block-start-width: var(--keen-grid--border-block-start-width);
+            border-block-end-width: var(--keen-grid--border-block-end-width);
+            border-inline-start-width: var(--keen-grid--border-inline-start-width);
+            border-inline-end-width: var(--keen-grid--border-inline-end-width);
+            padding-block-start: var(--keen-grid--padding-block-start);
+            padding-block-end: var(--keen-grid--padding-block-end);
+            padding-inline-start: var(--keen-grid--padding-inline-start);
+            padding-inline-end: var(--keen-grid--padding-inline-end);
+            list-style-type: '';
+
+            & * {
+                margin: 0;
+                --_keen-grid--flow-space: initial;
+            }
+
+            & h1 {
+                --_keen-grid--flow-space: var(--keen-type-h1--flow-space, 4.479rem);
+            }
+
+            & h2 {
+                --_keen-grid--flow-space: var(--keen-type-h2--flow-space, 3.732rem);
+            }
+
+            & h3 {
+                --_keen-grid--flow-space: var(--keen-type-h3--flow-space, 3.111rem);
+            }
+
+            & h4 {
+                --_keen-grid--flow-space: var(--keen-type-h4--flow-space, 2.592rem);
+            }
+
+            & h5 {
+                --_keen-grid--flow-space: var(--keen-type-h5--flow-space, 1.5rem);
+            }
+
+            & h6 {
+                --_keen-grid--flow-space: var(--keen-type-h6--flow-space, 1.5rem);
+            }
+
+            & :is(div, body, main, article, aside, footer, header, nav, section):where(:not(&)) {
+
+                & > * + * {
+                    margin-block-start: var(--_keen-grid--flow-space, var(--keen-type-content--flow-space, 1rlh));
+                }
+
+                &:where(&:has(> h1:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h1--flow-space, 4.479rem);
+                }
+
+                &:where(&:has(> h2:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h2--flow-space, 3.732rem);
+                }
+
+                &:where(&:has(> h3:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h3--flow-space, 3.111rem);
+                }
+
+                &:where(&:has(> h4:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h4--flow-space, 2.592rem);
+                }
+
+                &:where(&:has(> h5:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h5--flow-space, 1.5rem);
+                }
+
+                &:where(&:has(> h6:first-child)) {
+                    --_keen-grid--flow-space: var(--keen-type-h6--flow-space, 1.5rem);
+                }
+            }
+
+            & body {
+                --_keen-grid--flow-space: 0;
+            }
+
+            & :is(img, picture):where(:not(&)) {
+                max-inline-size: 100%;
+                vertical-align: bottom;
+            }
+
+            & :where(h1, h2, h3, h4, h5, h6, p):where(:not(&)) :is(img, picture):where(:not(&)) {
+                vertical-align: baseline;
+            }
+        }
+
+        [keen-grid]:where(body) {
+            margin: 0;
+        }
+
+        [keen-grid=""] {
+            &:where(html, body) {
+                --keen-grid--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            }
+
+            & > * + * {
+                margin-block-start: var(--_keen-grid--flow-space, var(--keen-type-content--flow-space, 1rlh));
+            }
+        }
+    }
+
+    @layer skin.core {
+        [keen-skin] {
+            --keen-skin--color-scheme: only light;
+            --keen-skin--text-color: CanvasText;
+            --keen-skin--background-color: Canvas;
+            --keen-skin--border-color: currentcolor;
+            --keen-skin--border-block-start-color: var(--keen-skin--border-color);
+            --keen-skin--border-block-end-color: var(--keen-skin--border-color);
+            --keen-skin--border-inline-start-color: var(--keen-skin--border-color);
+            --keen-skin--border-inline-end-color: var(--keen-skin--border-color);
+            --keen-skin-h1--text-color: inherit;
+            --keen-skin-h2--text-color: inherit;
+            --keen-skin-h3--text-color: inherit;
+            --keen-skin-h4--text-color: inherit;
+            --keen-skin-h5--text-color: inherit;
+            --keen-skin-h6--text-color: inherit;
+            --keen-skin-a--text-color: LinkText;
+            --keen-skin-a-visited--text-color: VisitedText;
+            --keen-skin-a-active--text-color: ActiveText;
+            --keen-skin-a--text-decoration-color: currentcolor;
+            --keen-skin-a-visited--text-decoration-color: currentcolor;
+            --keen-skin-a-active--text-decoration-color: currentcolor;
+
+            color: var(--keen-skin--text-color);
+            color-scheme: var(--keen-skin--color-scheme);
+            background-color: var(--keen-skin--background-color);
+            border-block-start-color: var(--keen-skin--border-block-start-color);
+            border-block-end-color: var(--keen-skin--border-block-end-color);
+            border-inline-start-color: var(--keen-skin--border-inline-start-color);
+            border-inline-end-color: var(--keen-skin--border-inline-end-color);
+
+            & h6:where(:not(&)) {
+                color: var(--keen-skin-h6--text-color);
+            }
+
+            & h5:where(:not(&)) {
+                color: var(--keen-skin-h5--text-color);
+            }
+
+            & h4:where(:not(&)) {
+                color: var(--keen-skin-h4--text-color);
+            }
+
+            & h3:where(:not(&)) {
+                color: var(--keen-skin-h3--text-color);
+            }
+
+            & h2:where(:not(&)) {
+                color: var(--keen-skin-h2--text-color);
+            }
+
+            & h1:where(:not(&)) {
+                color: var(--keen-skin-h1--text-color);
+            }
+
+            & a:where(:not(&)):link {
+                color: var(--keen-skin-a--text-color);
+                text-decoration-color: var(--keen-skin-a--text-decoration-color);
+            }
+
+            & a:where(:not(&)):visited {
+                color: var(--keen-skin-a-visited--text-color);
+                text-decoration-color: var(--keen-skin-a-visited--text-decoration-color);
+            }
+
+            & a:where(:not(&)):any-link:active {
+                color: var(--keen-skin-a-active--text-color);
+                text-decoration-color: var(--keen-skin-a-active--text-decoration-color);
+            }
+        }
+
+        [keen-skin=""] {
+            --keen-skin--color-scheme: light dark;
+        }
+    }
+}

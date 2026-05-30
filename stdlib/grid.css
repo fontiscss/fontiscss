@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/*!
+ * keen.css - The Algorithmic CSS Framework
+ *
+ * @author David J. Schwarz <mail+oss@davidschwarz.eu>
+ * @license MIT License
+ */
+
+@layer keen.grid.lib {
+    [keen-grid] {
+        --keen-lib-grid--gap: var(--KEEN-TYPE--SIZE-M, 1rlh);
+        --keen-lib-grid--column-gap: var(--keen-lib-grid--gap);
+        --keen-lib-grid--row-gap: var(--keen-lib-grid--gap);
+
+        --keen-lib-grid--max-inline-size: none;
+
+        --keen-lib-grid--column-track-size: 36ch;
+        --keen-lib-grid--column-repeat-count: auto-fit;
+    }
+
+    [keen-grid|="flow"],
+    [keen-grid|="grid"],
+    [keen-grid|="chain"],
+    [keen-grid|="flex"],
+    [keen-grid|="string"],
+    [keen-grid|="flexgrid"] {
+        max-inline-size: var(--keen-lib-grid--max-inline-size);
+        column-gap: var(--keen-lib-grid--column-gap);
+        row-gap: var(--keen-lib-grid--row-gap);
+    }
+
+    [keen-grid|="flow"] > * + * {
+        margin-block-start: var(--_keen-grid--flow-space, max(1lh, var(--KEEN-TYPE--SIZE-M, 1rlh)));
+    }
+
+    [keen-grid|="flow-stack"] {
+        display: grid;
+        row-gap: 0;
+    }
+
+    [keen-grid|="grid"] {
+        display: grid;
+        grid-template-columns: repeat(var(--keen-lib-grid--column-repeat-count), minmax(min(100%, var(--keen-lib-grid--column-track-size)), 1fr));
+    }
+
+    [keen-grid|="chain"] {
+        contain: inline-size;
+        display: grid;
+        grid-auto-columns: var(--keen-lib-grid--column-track-size);
+        grid-auto-flow: column;
+        overflow: auto;
+    }
+
+    [keen-grid|="flex"] {
+        contain: inline-size;
+        display: flex;
+        overflow: auto;
+    }
+
+    [keen-grid|="string"] {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    [keen-grid|="flexgrid"] {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > * {
+            flex-basis: var(--keen-lib-grid--column-track-size);
+            flex-grow: 1;
+        }
+    }
+
+    [keen-grid|="flow"],
+    [keen-grid|="grid"],
+    [keen-grid|="chain"],
+    [keen-grid|="flex"],
+    [keen-grid|="string"],
+    [keen-grid|="flexgrid"] {
+
+        &:where([keen-grid$="-box"],
+            [keen-grid$="-pack"],
+            [keen-grid$="-pad"]) {
+            --keen-grid--padding-block-start: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-block-end: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-inline-start: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-inline-end: var(--KEEN-TYPE--SIZE-M, 1rlh);
+        }
+
+        &:where([keen-grid$="-pack"]) {
+            padding-block-start: max(0px, calc(var(--keen-grid--padding-block-start) - max(0px, var(--keen-grid--border-block-start-width))));
+            padding-block-end: max(0px, calc(var(--keen-grid--padding-block-end) - max(0px, var(--keen-grid--border-block-end-width))));
+            padding-inline-start: max(0px, calc(var(--keen-grid--padding-inline-start) - max(0px, var(--keen-grid--border-inline-start-width))));
+            padding-inline-end: max(0px, calc(var(--keen-grid--padding-inline-end) - max(0px, var(--keen-grid--border-inline-end-width))));
+        }
+
+        &:where([keen-grid$="-box"],
+            [keen-grid$="-pack"]) {
+            --keen-grid--border-block-start-style: solid;
+            --keen-grid--border-block-end-style: solid;
+            --keen-grid--border-inline-start-style: solid;
+            --keen-grid--border-inline-end-style: solid;
+            --keen-grid--border-block-start-width: 3px;
+            --keen-grid--border-block-end-width: 3px;
+            --keen-grid--border-inline-start-width: 3px;
+            --keen-grid--border-inline-end-width: 3px;
+        }
+    }
+}
