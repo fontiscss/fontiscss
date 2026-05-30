@@ -44,7 +44,6 @@
             --keen-type--letter-spacing: normal;
             --keen-type--line-height: 1.5;
             --keen-type--scale-ratio: 1.2;
-            --keen-type--text-transform: none;
             --keen-type--text-underline-offset: auto;
 
             --keen-type-content--flow-space: var(--KEEN-TYPE--SIZE-M);
@@ -79,12 +78,6 @@
             --keen-type-h4--flow-space: var(--KEEN-TYPE--SIZE-XXL);
             --keen-type-h5--flow-space: var(--keen-type-content--flow-space);
             --keen-type-h6--flow-space: var(--keen-type-content--flow-space);
-            --keen-type-h1--text-transform: inherit;
-            --keen-type-h2--text-transform: inherit;
-            --keen-type-h3--text-transform: inherit;
-            --keen-type-h4--text-transform: inherit;
-            --keen-type-h5--text-transform: inherit;
-            --keen-type-h6--text-transform: inherit;
             --keen-type-h1--text-underline-offset: inherit;
             --keen-type-h2--text-underline-offset: inherit;
             --keen-type-h3--text-underline-offset: inherit;
@@ -138,7 +131,6 @@
             line-height: var(--keen-type--line-height);
             margin-block-start: var(--keen-type--flow-space-block-start);
             margin-block-end: var(--keen-type--flow-space-block-end);
-            text-transform: var(--keen-type--text-transform);
             text-underline-offset: var(--keen-type--text-underline-offset);
 
             & small:where(:not(&)) {
@@ -160,7 +152,6 @@
                 letter-spacing: var(--keen-type-h6--letter-spacing);
                 line-height: var(--keen-type-h6--line-height);
                 margin-block-start: var(--keen-type-h6--flow-space);
-                text-transform: var(--keen-type-h6--text-transform);
                 text-underline-offset: var(--keen-type-h6--text-underline-offset);
             }
 
@@ -171,7 +162,6 @@
                 letter-spacing: var(--keen-type-h5--letter-spacing);
                 line-height: var(--keen-type-h5--line-height);
                 margin-block-start: var(--keen-type-h5--flow-space);
-                text-transform: var(--keen-type-h5--text-transform);
                 text-underline-offset: var(--keen-type-h5--text-underline-offset);
             }
 
@@ -182,7 +172,6 @@
                 letter-spacing: var(--keen-type-h4--letter-spacing);
                 line-height: var(--keen-type-h4--line-height);
                 margin-block-start: var(--keen-type-h4--flow-space);
-                text-transform: var(--keen-type-h4--text-transform);
                 text-underline-offset: var(--keen-type-h4--text-underline-offset);
             }
 
@@ -193,7 +182,6 @@
                 letter-spacing: var(--keen-type-h3--letter-spacing);
                 line-height: var(--keen-type-h3--line-height);
                 margin-block-start: var(--keen-type-h3--flow-space);
-                text-transform: var(--keen-type-h3--text-transform);
                 text-underline-offset: var(--keen-type-h3--text-underline-offset);
             }
 
@@ -204,7 +192,6 @@
                 letter-spacing: var(--keen-type-h2--letter-spacing);
                 line-height: var(--keen-type-h2--line-height);
                 margin-block-start: var(--keen-type-h2--flow-space);
-                text-transform: var(--keen-type-h2--text-transform);
                 text-underline-offset: var(--keen-type-h2--text-underline-offset);
             }
 
@@ -215,7 +202,6 @@
                 letter-spacing: var(--keen-type-h1--letter-spacing);
                 line-height: var(--keen-type-h1--line-height);
                 margin-block-start: var(--keen-type-h1--flow-space);
-                text-transform: var(--keen-type-h1--text-transform);
                 text-underline-offset: var(--keen-type-h1--text-underline-offset);
             }
 
