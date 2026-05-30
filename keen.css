@@ -310,27 +310,27 @@
                 --_keen-grid--flow-space: initial;
             }
 
-            & h1:where(:not(&)) {
+            & h1 {
                 --_keen-grid--flow-space: var(--keen-type-h1--flow-space, 4.479rem);
             }
 
-            & h2:where(:not(&)) {
+            & h2 {
                 --_keen-grid--flow-space: var(--keen-type-h2--flow-space, 3.732rem);
             }
 
-            & h3:where(:not(&)) {
+            & h3 {
                 --_keen-grid--flow-space: var(--keen-type-h3--flow-space, 3.111rem);
             }
 
-            & h4:where(:not(&)) {
+            & h4 {
                 --_keen-grid--flow-space: var(--keen-type-h4--flow-space, 2.592rem);
             }
 
-            & h5:where(:not(&)) {
+            & h5 {
                 --_keen-grid--flow-space: var(--keen-type-h5--flow-space, 1.5rem);
             }
 
-            & h6:where(:not(&)) {
+            & h6 {
                 --_keen-grid--flow-space: var(--keen-type-h6--flow-space, 1.5rem);
             }
 
