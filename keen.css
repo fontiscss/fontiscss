@@ -247,21 +247,18 @@
 
     @layer grid.core {
         [keen-grid] {
-            --keen-grid--border-style: none;
-            --keen-grid--border-block-start-style: var(--keen-grid--border-style);
-            --keen-grid--border-block-end-style: var(--keen-grid--border-style);
-            --keen-grid--border-inline-start-style: var(--keen-grid--border-style);
-            --keen-grid--border-inline-end-style: var(--keen-grid--border-style);
-            --keen-grid--border-width: 0;
-            --keen-grid--border-block-start-width: var(--keen-grid--border-width);
-            --keen-grid--border-block-end-width: var(--keen-grid--border-width);
-            --keen-grid--border-inline-start-width: var(--keen-grid--border-width);
-            --keen-grid--border-inline-end-width: var(--keen-grid--border-width);
-            --keen-grid--padding: 0;
-            --keen-grid--padding-block-start: var(--keen-grid--padding);
-            --keen-grid--padding-block-end: var(--keen-grid--padding);
-            --keen-grid--padding-inline-start: var(--keen-grid--padding);
-            --keen-grid--padding-inline-end: var(--keen-grid--padding);
+            --keen-grid--border-block-start-style: none;
+            --keen-grid--border-block-end-style: none;
+            --keen-grid--border-inline-start-style: none;
+            --keen-grid--border-inline-end-style: none;
+            --keen-grid--border-block-start-width: 0;
+            --keen-grid--border-block-end-width: 0;
+            --keen-grid--border-inline-start-width: 0;
+            --keen-grid--border-inline-end-width: 0;
+            --keen-grid--padding-block-start: 0;
+            --keen-grid--padding-block-end: 0;
+            --keen-grid--padding-inline-start: 0;
+            --keen-grid--padding-inline-end: 0;
 
             border-block-start-style: var(--keen-grid--border-block-start-style);
             border-block-end-style: var(--keen-grid--border-block-end-style);

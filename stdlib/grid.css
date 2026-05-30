@@ -83,7 +83,10 @@
         &:where([keen-grid$="-box"],
             [keen-grid$="-pack"],
             [keen-grid$="-pad"]) {
-            --keen-grid--padding: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-block-start: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-block-end: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-inline-start: var(--KEEN-TYPE--SIZE-M, 1rlh);
+            --keen-grid--padding-inline-end: var(--KEEN-TYPE--SIZE-M, 1rlh);
         }
 
         &:where([keen-grid$="-pack"]) {
@@ -95,7 +98,10 @@
 
         &:where([keen-grid$="-box"],
             [keen-grid$="-pack"]) {
-            --keen-grid--border-style: solid;
+            --keen-grid--border-block-start-style: solid;
+            --keen-grid--border-block-end-style: solid;
+            --keen-grid--border-inline-start-style: solid;
+            --keen-grid--border-inline-end-style: solid;
         }
     }
 }
